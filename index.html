@@ -71,7 +71,7 @@
 "Carte de la Voisine Défunte\nAction : Pense à quelqu’un qui t’a agacée, puis à ce qu’elle t’a appris malgré elle.\nPhrase à dire : “Même les présences rugueuses laissent une empreinte.”\nEffet : Apaisement des mémoires conflictuelles.",
 
 "Carte du Vélo Volé Vu\nAction : Imagine que chaque objet volé garde en lui un souvenir de son ancien propriétaire.\nPhrase à dire : “Les objets se souviennent, même quand les humains oublient.”\nEffet : Réactivation de la tendresse pour ce qui fut."
-      "Carte de la Conversation Inattendue\nAction : Accueille une discussion imprévue comme un cadeau.\nPhrase à dire : “Je suis disponible à l’imprévu qui me parle.”\nEffet : Ouverture à la rencontre douce.",
+ "Carte de la Conversation Inattendue\nAction : Accueille une discussion imprévue comme un cadeau.\nPhrase à dire : “Je suis disponible à l’imprévu qui me parle.”\nEffet : Ouverture à la rencontre douce.",
 
 "Carte de la Confiture Partagée\nAction : Envoie un message de gratitude pour un petit geste reçu.\nPhrase à dire : “Ta douceur m’a nourrie plus que tu ne crois.”\nEffet : Activation du lien invisible.",
 
@@ -108,12 +108,13 @@
         ];
 
     function tirerCarte() {
-      const carteDiv = document.getElementById("carte");
-      carteDiv.innerText = "✨ Tirage en cours...";
-      setTimeout(() => {
-        const index = Math.floor(Math.random() * cartes.length);
-        carteDiv.innerText = cartes[index];
-      }, 800);
+  const carteDiv = document.getElementById("carte");
+  carteDiv.innerText = "✨ Tirage en cours...";
+  setTimeout(() => {
+    const index = Math.floor(Math.random() * cartes.length);
+    carteDiv.innerText = cartes[index];
+  }, 800);
+}
     }
   </script>
 </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tirage de l'absurde</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2em; background-color: #fdf6e3; }
+    button { padding: 1em; font-size: 1.2em; margin-top: 1em; }
+    #carte { margin-top: 2em; font-size: 1.4em; color: #444; }
+  </style>
+</head>
+<body>
+  <h1>Tirage de l'absurde</h1>
+  <p>Clique sur le bouton pour tirer une carte poétique et absurde.</p>
+  <button onclick="tirerCarte()">Tirer une carte</button>
+  <div id="carte"></div>
+
+  <script>
+    const cartes = [
+      "Je suis la fatigue qui danse en chaussettes.",
+      "Aujourd’hui, je suis une virgule dans le brouillard.",
+      "Je fais semblant d’être utile, et ça marche.",
+      "J’ai oublié pourquoi je suis venue, alors je reste.",
+      "Je suis la tendresse qui s’est perdue dans un tiroir."
+    ];
+
+    function tirerCarte() {
+      const index = Math.floor(Math.random() * cartes.length);
+      document.getElementById("carte").innerText = cartes[index];
+    }
+  </script>
+</body>
+</html>

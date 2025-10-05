@@ -107,14 +107,27 @@
 "Carte de la Banane Courbée\nCatégorie : Corps en Rébellion Douce\nTitre : Je veux me tenir droite, mais je suis une banane.\nEffet : Tu redresses ton dos avec noblesse, puis tu te courbes avec panache.\nTu es à la fois colonne vertébrale et point d’interrogation existentiel.\nRituel bonus : Fais trois pas en te tenant droite comme une baguette.\nPuis plie légèrement les genoux et murmure : “Je suis une banane libre.”"
         ];
 
-   function tirerCarte() {
+  function tirerCarte() {
+  // Sélectionne la div où afficher la carte
   const carteDiv = document.getElementById("carte");
 
-  // Exemple de tirage aléatoire
+  // Vérifie que la div existe
+  if (!carteDiv) {
+    console.error("La div avec l'ID 'carte' est introuvable.");
+    return;
+  }
+
+  // Vérifie que le tableau de cartes existe et contient des éléments
+  if (!cartes || cartes.length === 0) {
+    console.error("Le tableau 'cartes' est vide ou non défini.");
+    return;
+  }
+
+  // Tire une carte au hasard
   const index = Math.floor(Math.random() * cartes.length);
   const carte = cartes[index];
 
-  // Affichage de la carte
+  // Affiche la carte dans la div
   carteDiv.innerHTML = `
     <div class="carte">
       <h2>${carte.titre}</h2>
@@ -123,3 +136,5 @@
     </div>
   `;
 }
+
+

@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <title>Tirage
 <head>
-  <meta charset="UTF-8">
-  <title>Tirage de l'absurde</title>
+  <meta charset="UTF-8"> de l'absurde</title> {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+      background-color: #fdf6e3;
+    }
+    button {
+      padding: 1em;
+      font-size: 1.2em;
+      margin-top: 1em;
+    }
+    #carte {
+      margin
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 2em; background-color: #fdf6e3; }
-    button { padding: 1em; font-size: 1.2em; margin-top: 1em; }
-    #carte { margin-top: 2em; font-size: 1.4em; color: #444; }
+    body-top: 2em;
+     ;
+      color: #444;
+    }
+    . font-size: 1.4emfade-in {
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <h1>Tirage de l'absurde</h1>
-  <p>Clique sur le bouton pour tirer une carte poétique et absurde.</p>
-  <button onclick="tirerCarte()">Tirer une carte</button>
+ opacity: 0; }
+       <h1>Tirage de l<p>Clique sur le bouton pour tirer une carte poétique et absurde.</p>
+  <button onclick="tirerCarte()" aria-label="Tirer une carte absurde">Tirer une carte</button>
   <div id="carte"></div>
 
   <script>
-    const cartes = [
+    const cartes'absurde</h1>
+   = [
       "Je suis la fatigue qui danse en chaussettes.",
       "Aujourd’hui, je suis une virgule dans le brouillard.",
       "Je fais semblant d’être utile, et ça marche.",
@@ -24,9 +44,12 @@
       "Je suis la tendresse qui s’est perdue dans un tiroir."
     ];
 
-    function tirerCarte() {
-      const index = Math.floor(Math.random() * cartes.length);
-      document.getElementById("carte").innerText = cartes[index];
+Carte() {
+      const    function tirer carteDiv = document.getElementById("carte");
+      const(Math.random() * cartes.length);
+ index = Math.floor      carteDiv.inner      carteDiv.classList.remove("fade-in");
+      void carteDiv.offsetWidth; // reset animation
+      carteDiv.classList.add("fade-in");
     }
   </script>
 </body>

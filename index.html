@@ -5,11 +5,30 @@
   <title>Tirage de l'absurde</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #fdf6e3;
       color: #333;
       text-align: center;
       padding: 2em;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 1.5em;
+    }
+    button {
+      padding: 0.6em 1.2em;
+      font-size: 1em;
+      background-color: #e0c9a6;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d4b98f;
     }
     .carte {
       margin-top: 2em;
@@ -18,18 +37,13 @@
       background-color: #fff;
       display: inline-block;
       max-width: 400px;
-    }
-    button {
-      margin-top: 1em;
-      padding: 0.5em 1em;
-      font-size: 1em;
-      cursor: pointer;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
   <h1>Tirage de l'absurde</h1>
-  <p>Bienvenue dans le jeu poético-absurde. Cliquez pour tirer une carte.</p>
+  <p>Bienvenue dans ton jeu poético-absurde. Clique pour tirer une carte.</p>
   <button onclick="tirerCarte()">🎴 Tirer une carte</button>
   <div class="carte" id="carte"></div>
 
@@ -39,7 +53,10 @@
       "Aujourd’hui, tu es un pigeon philosophe. Marche en cercles et médite sur les miettes.",
       "Tu as le droit de ne pas savoir. C’est une forme rare de sagesse.",
       "Ton courage est un chausson : doux, discret, mais essentiel pour avancer.",
-      "Tu es l’interrupteur du doute. Éteins-le quand tu veux respirer."
+      "Tu es l’interrupteur du doute. Éteins-le quand tu veux respirer.",
+      "Tu es une virgule dans le chaos. Petite, mais tu changes le rythme.",
+      "Aujourd’hui, tu es un poème qui ne rime pas, et c’est très bien comme ça.",
+      "Tu es une pause dans le vacarme. Respire, tu es essentielle."
     ];
 
     function tirerCarte() {
@@ -49,3 +66,4 @@
   </script>
 </body>
 </html>
+

@@ -121,7 +121,7 @@
   }
 
   // Vérifie que le tableau de cartes existe et contient des éléments
-  if (!cartes || cartes.length === 0) {
+  if (!cartes || !cartes.length) {
     console.error("Le tableau 'cartes' est vide ou non défini.");
     return;
   }

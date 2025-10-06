@@ -62,4 +62,35 @@
     "phrase": "Honorer le chaos doux du réveil.",
     "effet": "Un soupir de soulagement. Et peut-être un sourire."
   }
+  {
+    "titre": "Carte du Réalisme Foudroyé",
+    "action": "Écris sur un papier : “Je vois clair. Je ressens fort. Je ne suis pas dupe.” Glisse-le dans ton portefeuille, à côté de tes pièces ou billets. C’est ton talisman de lucidité.",
+    "phrase": "Nommer ce qui fait mal sans s’excuser.",
+    "effet": "Une force tranquille. Et le droit de continuer à aimer ce qui ne se vend pas."
+  },
+  {
+    "titre": "Carte du Geste Résistant",
+    "action": "Choisis un geste minuscule qui dit “je suis vivante”.",
+    "phrase": "Répondre à la noirceur par un acte doux.",
+    "effet": "Une sensation de pouvoir intérieur."
+  },
+  {
+    "titre": "Carte du Gris qui Parle",
+    "action": "1. Choisis une couleur qui te manque (rose, bleu, doré…). 2. Trouve-la quelque part — dans un objet, une image, une pensée. 3. Dis : “Je ne suis pas rien. Je suis celle qui cherche encore.”",
+    "phrase": "Honorer le chaos sans s’y dissoudre.",
+    "effet": "Une trace de toi dans le monde. Et le droit de ne pas aimer les infos ce matin."
+  },
+  {
+    "titre": "Carte du Tempo Humain",
+    "action": "Après chaque tâche accomplie sans précipitation, offre-toi un souffle, un sourire, ou un regard complice à ton reflet.",
+    "phrase": "Je ne suis pas une machine.",
+    "effet": "Tu ralentis. Tu respires. Tu fais les choses avec âme. Même si le temps s’étire, tu choisis la qualité plutôt que la vitesse. Tu honores ton rythme comme un art subtil."
+  },
+  {
+    "titre": "Carte de l’Illusion du Temps Manquant",
+    "action": "Choisis une tâche simple et fais-la en chantant une chanson inventée sur les horloges qui dansent en tutu. Puis déclare solennellement : “Je suis la Présidente du Club des Gens Qui Ont Le Temps.”",
+    "phrase": "J’ai le temps, mais je cours après une horloge invisible.",
+    "effet": "Tu offres un thé à l’horloge qui te poursuit et tu lui proposes de marcher en crabe."
+  }
+
 ]

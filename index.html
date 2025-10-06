@@ -1,73 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Tirage de carte absurde</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 2em;
-            background-color: #fdf6e3;
-        }
-        #carte {
-            margin-top: 2em;
-            padding: 1em;
-            border: 2px dashed #333;
-            background-color: #fff;
-            font-size: 1.2em;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        button {
-            padding: 0.5em 1em;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: #e0c9a6;
-            border: none;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #d4b98c;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Tirage de carte absurde</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+      background-color: #fdf6e3;
+    }
+    #carte {
+      margin-top: 2em;
+      padding: 1em;
+      border: 2px dashed #333;
+      background-color: #fff;
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #e0c9a6;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #d4b98c;
+    }
+  </style>
 </head>
 <body>
-    <h1>🎴 Tirage de carte absurde</h1>
-    <button onclick="tirerCarte()">Tirer une carte</button>
-    <div id="carte">Aucune carte tirée pour l’instant.</div>
+  <h1>🎴 Tirage de carte absurde</h1>
+  <button onclick="tirerCarte()">Tirer une carte</button>
+  <div id="carte">Aucune carte tirée pour l’instant.</div>
 
-    <script>
-        let cartes = [];
+  <script>
+    let cartes = [];
 
-        // Chargement du fichier JSON
-        fetch('./cartes.json')
-            .then(response => response.json())
-            .then(data => {
-                cartes = data;
-            })
-            .catch(error => {
-                document.getElementById('carte').innerText = "Erreur de chargement des cartes.";
-                console.error("Erreur JSON :", error);
-            });
+    // Chargement du fichier JSON
+    fetch('./cartes.json')
+      .then(response => response.json())
+      .then(data => {
+        cartes = data;
+      })
+      .catch(error => {
+        document.getElementById('carte').innerText = "Erreur de chargement des cartes.";
+        console.error("Erreur JSON :", error);
+      });
 
-        // Fonction de tirage
-        function tirerCarte() {
-            if (cartes.length === 0) {
-                document.getElementById('carte').innerText = "Les cartes ne sont pas encore chargées.";
-                return;
-            }
-            const index = Math.floor(Math.random() * cartes.length);
-            const carte = cartes[index];
-            document.getElementById('carte').innerHTML = `
-                <strong>${carte.titre}</strong><br><br>
-                🌀 <em>Action :</em> ${carte.action}<br>
-                💬 <em>Phrase :</em> ${carte.phrase}<br>
-                ✨ <em>Effet :</em> ${carte.effet}
-            `;
-        }
-    </script>
+    // Fonction de tirage
+    function tirerCarte() {
+      if (cartes.length === 0) {
+        document.getElementById('carte').innerText = "Les cartes ne sont pas encore chargées.";
+        return;
+      }
+      const index = Math.floor(Math.random() * cartes.length);
+      const carte = cartes[index];
+
+      // Affichage des champs existants
+      document.getElementById('carte').innerHTML = `
+        <strong>${carte.titre}</strong><br><br>
+        🌀 <em>Action :</em> ${carte.action}<br>
+        💬 <em>Phrase :</em> ${carte.phrase}<br>
+        ✨ <em>Effet :</em> ${carte.effet}
+      `;
+    }
+  </script>
 </body>
 </html>
-

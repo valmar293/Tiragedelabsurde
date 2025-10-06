@@ -1,58 +1,36 @@
-[
-  {
-    "titre": "Carte de l'Escargot philosophe",
-    "action": "Avance à la vitesse d'un escargot philosophe.",
-    "phrase": "Je suis lente, mais je pense profond.",
-    "effet": "Active la réflexion lente et la tendresse rampante."
-  },
-  {
-    "titre": "Carte du Chapeau Invisible",
-    "action": "Porte un chapeau invisible et salue les passants comme un magicien fatigué.",
-    "phrase": "Je suis là, mais subtile.",
-    "effet": "Sème l'étonnement discret."
-  },
-  {
-    "titre": "Carte du Retour en Arrière",
-    "action": "Marche à reculons dans ton esprit, juste pour voir ce qui te suit.",
-    "phrase": "Je suis suivie par mes pensées anciennes.",
-    "effet": "Dialogue avec le passé sans nostalgie."
-  },
-  {
-    "titre": "Carte du Trop-Fait Sans Fanfare",
-    "action": "Énumère tout ce que tu as fait aujourd'hui, même les plus petits gestes.",
-    "phrase": "Je suis une fourmi poétique, et j'ai déplacé des montagnes sans bruit.",
-    "effet": "Reconnaissance immédiate, droit au repos."
-  },
-  {
-    "titre": "Carte du Réalisme Foudroyé",
-    "mission": "Nommer ce qui fait mal sans s’excuser",
-    "action": "Écris sur un papier : “Je vois clair. Je ressens fort. Je ne suis pas dupe.” Glisse-le dans ton portefeuille, à côté de tes pièces ou billets. C’est ton talisman de lucidité.",
-    "effet": "Une force tranquille. Et le droit de continuer à aimer ce qui ne se vend pas."
-  },
-  {
-    "titre": "Carte du Geste Résistant",
-    "mission": "Répondre à la noirceur par un acte doux",
-    "action": "Choisis un geste minuscule qui dit “je suis vivante”.",
-    "effet": "Une sensation de pouvoir intérieur."
-  },
-  {
-    "titre": "Carte du Gris qui Parle",
-    "mission": "Honorer le chaos sans s’y dissoudre",
-    "action": "1. Choisis une couleur qui te manque (rose, bleu, doré…).\\n2. Trouve-la quelque part — dans un objet, une image, une pensée.\\n3. Dis : “Je ne suis pas rien. Je suis celle qui cherche encore.”",
-    "effet": "Une trace de toi dans le monde. Et le droit de ne pas aimer les infos ce matin."
-  },
-  {
-    "titre": "Carte du Tempo Humain",
-    "mission": "Présence Bienveillante",
-    "action": "Je ne suis pas une machine.",
-    "effet": "Tu ralentis. Tu respires. Tu fais les choses avec âme.\\nMême si le temps s’étire, tu choisis la qualité plutôt que la vitesse.\\nTu honores ton rythme comme un art subtil.\\nRituel bonus : Après chaque tâche accomplie sans précipitation, offre-toi un souffle, un sourire, ou un regard complice à ton reflet."
-  },
-  {
-    "titre": "Carte de l’Illusion du Temps Manquant",
-    "mission": "Absurdies Quotidiennes",
-    "action": "J’ai le temps, mais je cours après une horloge invisible.",
-    "effet": "Tu offres un thé à l’horloge qui te poursuit et tu lui proposes de marcher en crabe.\\nRituel bonus : Choisis une tâche simple et fais-la en chantant une chanson inventée sur les horloges qui dansent en tutu.\\nPuis déclare solennellement : “Je suis la Présidente du Club des Gens Qui Ont Le Temps.”"
-  }
-
-]
-
+{
+  "cartes": [
+    {
+      "titre": "Carte du Cléclair",
+      "mission": "Sortir, même si le trottoir te regarde bizarrement.",
+      "action": "Enfourcher ton vélo imaginaire (celui qui n’a pas été volé), et dire : \"Je suis la tempête qui va chez le serrurier.\"",
+      "effet": "Tu traverses l’inertie comme un éclair doux, sans bruit mais avec puissance.",
+      "rituel": "Avant de partir, saluer ton reflet dans la fenêtre et lui dire : \"On y va, toi et moi. Pas pour être parfaites. Juste pour être là.\""
+    },
+    {
+      "titre": "Carte du Rien Nécessaire",
+      "mission": "Ne rien faire, mais le faire avec panache. Si possible, en chaussettes dépareillées.",
+      "action": "S’allonger comme une étoile de mer philosophe, et dire à voix basse : \"Je suis en grève de moi-même.\"",
+      "effet": "Tu deviens une huître libre dans un monde trop bavard.",
+      "rituel": "Imaginer que chaque pensée qui te traverse est un pigeon en monocle. Tu peux les saluer, ou les ignorer. Tu es la reine du banc."
+    },
+    {
+      "titre": "Carte du Temps Élastique",
+      "action": "Fixer l’horloge avec l’intensité d’un lama philosophe.",
+      "effet": "Les minutes s’étirent, deviennent molles, rebondissent, et te laissent le temps de rêver à des choses inutiles mais joyeuses.",
+      "rituel": "1. Imaginer que chaque tic-tac est un hamster qui saute à la corde.\n2. Dire à voix basse : \"Je suis maître du chewing-temps.\"\n3. Faire une grimace au futur, juste pour le plaisir."
+    },
+    {
+      "titre": "Carte du Flou Sacré",
+      "action": "Fixer un mur, une plante, ou ton propre pied en te demandant : \"Est-ce que c’est ça, le sens de la vie ?\"",
+      "effet": "Le flou devient une brume créative où les envies se déguisent en pigeons philosophes.",
+      "rituel": "1. Soupirer comme une diva en fin de spectacle.\n2. Imaginer que ta culpabilité est un lama qui fait du moonwalk.\n3. Lui offrir un banc mental avec coussins moelleux et une pancarte : \"Réservé aux pensées floues.\""
+    },
+    {
+      "titre": "Carte du Double Coup Domestique",
+      "action": "Brosser les dents avec panache, tout en lançant un regard accusateur à l’évier.",
+      "effet": "L’évier se nettoie par osmose morale, impressionné par ta détermination bucco-dentaire.",
+      "rituel": "1. Cracher avec élégance.\n2. Essuyer l’évier comme si tu bénissais un autel.\n3. Dire à voix basse : \"Deux mouches d’un seul claquement de brosse.\""
+    }
+  ]
+}

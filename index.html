@@ -109,7 +109,7 @@
       "action": "Brosser les dents avec panache, tout en lançant un regard accusateur à l’évier.",
       "effet": "L’évier se nettoie par osmose morale, impressionné par ta détermination bucco-dentaire.",
       "rituel": "1. Cracher avec élégance.\n2. Essuyer l’évier comme si tu bénissais un autel.\n3. Dire à voix basse : \"Deux mouches d’un seul claquement de brosse.\""
-    },
+    }
   ];
 
 
@@ -119,10 +119,6 @@
         document.getElementById("carte").innerHTML = "⏳ Les cartes ne sont pas encore chargées.";
         return;
       }
-
-      const carte = cartes[Math.floor(Math.random() * cartes.length)];
-      afficherCarte(carte);
-    }
 
     function afficherCarte(carte) {
       let contenu = `<h2>${carte.titre}</h2>`;

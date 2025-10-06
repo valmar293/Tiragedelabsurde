@@ -46,58 +46,55 @@
   <div id="carte">Aucune carte tirée pour l’instant.</div>
 
   <script>
-  
-  const cartes = [
-  {
-    "titre": "Carte du Cléclair",
-    "mission": "Sortir, même si le trottoir te regarde bizarrement.",
-    "action": "Enfourcher ton vélo imaginaire...",
-    "effet": "Tu traverses l’inertie...",
-    "rituel": "Avant de partir, saluer ton reflet...",
-    "recompense": "Une clé neuve.",
-    "phrase": "Je suis la tempête qui va chez le serrurier."
-  },
-  {
-    "titre": "Carte du Rien Nécessaire",
-    "action": "S’allonger comme une étoile de mer philosophe.",
-    "effet": "Tu deviens une huître libre.",
-    "rituel": "Imaginer que chaque pensée est un pigeon en monocle.",
-    "recompense": "Le droit de ne pas répondre aux textos.",
-    "phrase": "Je suis en grève de moi-même."
-  },
-  // Tu peux ajouter autant de cartes que tu veux ici
-  {
-    "titre": "Le temps a fait un trou dans sa montre",
-    "action": "Tente de te souvenir de ce que tu faisais il y a exactement 7 minutes. Si tu échoues, la carte s’active.",
-    "effet": "Le temps s’est replié sur lui-même comme une nappe en tissu intelligent. Tu es officiellement en avance sur ton propre retard.",
-    "recompense": "Gagne un “tic-tac imaginaire” — il ne fait pas avancer l’heure, mais il te donne l’impression d’avoir fait quelque chose. Bonus si tu réussis à ralentir le temps avec une grimace ou une pause inutile."
-  },
-  {
-    "titre": "Carte du Repos Technopoétique",
-    "action": "Ferme l’ordi avec un soupir stylé.",
-    "effet": "Le bug devient une anecdote.",
-    "recompense": "Un thé, un silence, et la certitude que tu reviendras quand ce sera juste."
-  },
-  {
-    "titre": "Carte du Blabla Fantôme",
-    "action": "Parler à une chaise vide en l’appelant “Monsieur Jean-Michel du Silence”.",
-    "effet": "La chaise te répond par télépathie, mais uniquement en proverbes mal traduits.",
-    "recompense": "Un fou rire discret et une sensation de “je suis bizarre mais ça me va”."
-  },
-  {
-    "titre": "Carte du Je t’aime sans mode d’emploi",
-    "action": "Être là, même quand tu ne sais pas pourquoi.",
-    "effet": "Le cœur fait un clin d’œil à l’âme.",
-    "recompense": "Une tendresse qui ne demande rien en retour."
-  },
-  {
-    "titre": "La patate cosmique en robe de chambre",
-    "action": "Se lever en traînant une chaussette comme sceptre royal.",
-    "effet": "Tu deviens souveraine du royaume du “je fais ce que je peux”.",
-    "recompense": "Un soupir de dignité molle.",
-    "rituel": "Couronner une peluche ou une théière comme ministre de la motivation."
-  },
-
+    const cartes = [
+    {
+      "titre": "Carte du Cléclair",
+      "mission": "Sortir, même si le trottoir te regarde bizarrement.",
+      "action": "Enfourcher ton vélo imaginaire...",
+      "effet": "Tu traverses l’inertie...",
+      "rituel": "Avant de partir, saluer ton reflet...",
+      "recompense": "Une clé neuve.",
+      "phrase": "Je suis la tempête qui va chez le serrurier."
+    },
+    {
+      "titre": "Carte du Rien Nécessaire",
+      "action": "S’allonger comme une étoile de mer philosophe.",
+      "effet": "Tu deviens une huître libre.",
+      "rituel": "Imaginer que chaque pensée est un pigeon en monocle.",
+      "recompense": "Le droit de ne pas répondre aux textos.",
+      "phrase": "Je suis en grève de moi-même."
+    },
+    {
+      "titre": "Le temps a fait un trou dans sa montre",
+      "action": "Tente de te souvenir de ce que tu faisais il y a exactement 7 minutes. Si tu échoues, la carte s’active.",
+      "effet": "Le temps s’est replié sur lui-même comme une nappe en tissu intelligent. Tu es officiellement en avance sur ton propre retard.",
+      "recompense": "Gagne un “tic-tac imaginaire” — il ne fait pas avancer l’heure, mais il te donne l’impression d’avoir fait quelque chose. Bonus si tu réussis à ralentir le temps avec une grimace ou une pause inutile."
+    },
+    {
+      "titre": "Carte du Repos Technopoétique",
+      "action": "Ferme l’ordi avec un soupir stylé.",
+      "effet": "Le bug devient une anecdote.",
+      "recompense": "Un thé, un silence, et la certitude que tu reviendras quand ce sera juste."
+    },
+    {
+      "titre": "Carte du Blabla Fantôme",
+      "action": "Parler à une chaise vide en l’appelant “Monsieur Jean-Michel du Silence”.",
+      "effet": "La chaise te répond par télépathie, mais uniquement en proverbes mal traduits.",
+      "recompense": "Un fou rire discret et une sensation de “je suis bizarre mais ça me va”."
+    },
+    {
+      "titre": "Carte du Je t’aime sans mode d’emploi",
+      "action": "Être là, même quand tu ne sais pas pourquoi.",
+      "effet": "Le cœur fait un clin d’œil à l’âme.",
+      "recompense": "Une tendresse qui ne demande rien en retour."
+    },
+    {
+      "titre": "La patate cosmique en robe de chambre",
+      "action": "Se lever en traînant une chaussette comme sceptre royal.",
+      "effet": "Tu deviens souveraine du royaume du “je fais ce que je peux”.",
+      "recompense": "Un soupir de dignité molle.",
+      "rituel": "Couronner une peluche ou une théière comme ministre de la motivation."
+    },
     {
       "titre": "Carte du Flou Sacré",
       "action": "Fixer un mur, une plante, ou ton propre pied en te demandant : \"Est-ce que c’est ça, le sens de la vie ?\"",
@@ -112,40 +109,29 @@
     }
   ];
 
+  function tirerCarte() {
+    const carte = cartes[Math.floor(Math.random() * cartes.length)];
+    afficherCarte(carte);
+  }
 
-
-    function tirerCarte() {
-      if (cartes.length === 0) {
-        document.getElementById("carte").innerHTML = "⏳ Les cartes ne sont pas encore chargées.";
-        return;
-      }
-
-    function afficherCarte(carte) {
-      let contenu = `<h2>${carte.titre}</h2>`;
-
-      if (carte.mission) {
-        contenu += `<p><strong>Mission :</strong> ${carte.mission}</p>`;
-      }
-      if (carte.action) {
-        contenu += `<p><strong>Action :</strong> ${carte.action}</p>`;
-      }
-      if (carte.effet) {
-        contenu += `<p><strong>Effet :</strong> ${carte.effet}</p>`;
-      }
-      if (carte.rituel) {
-        contenu += `<p><strong>Rituel :</strong> ${carte.rituel.replace(/\n/g, "<br>")}</p>`;
-      }
-      if (carte.recompense) {
-        contenu += `<p><strong>Récompense :</strong> ${carte.recompense}</p>`;
-      }
-      if (carte.phrase || carte.phrase_a_dire) {
-        const phrase = carte.phrase || carte.phrase_a_dire;
-        contenu += `<p><strong>Phrase à dire :</strong> ${phrase}</p>`;
-      }
-
-      document.getElementById("carte").innerHTML = contenu;
+  function afficherCarte(carte) {
+    let contenu = `<h2>${carte.titre}</h2>`;
+    if (carte.mission) contenu += `<p><strong>Mission :</strong> ${carte.mission}</p>`;
+    if (carte.action) contenu += `<p><strong>Action :</strong> ${carte.action}</p>`;
+    if (carte.effet) contenu += `<p><strong>Effet :</strong> ${carte.effet}</p>`;
+    if (carte.rituel) contenu += `<p><strong>Rituel :</strong> ${carte.rituel.replace(/\n/g, "<br>")}</p>`;
+    if (carte.recompense) contenu += `<p><strong>Récompense :</strong> ${carte.recompense}</p>`;
+    if (carte.phrase || carte.phrase_a_dire) {
+      const phrase = carte.phrase || carte.phrase_a_dire;
+      contenu += `<p><strong>Phrase à dire :</strong> ${phrase}</p>`;
     }
-  </script>
-
+    document.getElementById("carte").innerHTML = contenu;
+  }
+</script>
 </body>
 </html>
+
+
+
+  
+ 

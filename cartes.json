@@ -34,9 +34,3 @@
   }
 ]
 
-
-🧩 Ce fichier contient :
-- 3 cartes simples avec le champ "texte"
-- 4 cartes complexes avec les champs "titre", "action", "phrase", "effet"
-💡 Si ton script JavaScript ne reconnaît pas les cartes complexes, je peux t’aider à adapter le tirage pour qu’il affiche tous les types de cartes correctement.
-Tu veux que je vérifie aussi ton index.html pour que tout fonctionne ensemble ?

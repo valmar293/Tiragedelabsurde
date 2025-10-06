@@ -1,78 +1,37 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Jeu de cartes absurdes</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #fdf6e3;
-      color: #333;
-      text-align: center;
-      padding: 2em;
+<script>
+  let cartes = [];
+
+  // Charger le fichier JSON
+  fetch('cartes.json')
+    .then(response => response.json())
+    .then(data => {
+      cartes = data;
+    })
+    .catch(error => {
+      document.getElementById('carte').innerText = "Erreur de chargement des cartes.";
+      console.error("Erreur JSON :", error);
+    });
+
+  function tirerCarte() {
+    if (!cartes || cartes.length === 0) {
+      document.getElementById('carte').innerText = "Aucune carte disponible.";
+      return;
     }
-    .carte {
-      border: 2px dashed #999;
-      padding: 1em;
-      margin-top: 2em;
-      background-color: #fff;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+
+    const carte = cartes[Math.floor(Math.random() * cartes.length)];
+    let contenu = "";
+
+    if ("texte" in carte) {
+      contenu = `<p>${carte.texte}</p>`;
+    } else {
+      contenu = `
+        <h2>${carte.titre || "Carte sans titre"}</h2>
+        <p><strong>Action :</strong> ${carte.action || "—"}</p>
+        <p><strong>Phrase :</strong> ${carte.phrase || "—"}</p>
+        <p><strong>Effet :</strong> ${carte.effet || "—"}</p>
+      `;
     }
-    button {
-      padding: 0.5em 1em;
-      font-size: 1em;
-      background-color: #e0cfe3;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #d1bcd6;
-    }
-  </style>
-</head>
-<body>
-  <h1>🌸 Tire une carte absurde 🌸</h1>
-  <button onclick="tirerCarte()">Tirer une carte</button>
-  <div class="carte" id="carte"></div>
 
-  <script>
-    let cartes = [];
-
-    // Charger le fichier JSON
-    fetch('cartes.json')
-      .then(response => response.json())
-      .then(data => {
-        cartes = data;
-      })
-      .catch(error => {
-        document.getElementById('carte').innerText = "Erreur de chargement des cartes.";
-        console.error("Erreur JSON :", error);
-      });
-
-    function tirerCarte() {
-      if (cartes.length === 0) {
-        document.getElementById('carte').innerText = "Aucune carte disponible.";
-        return;
-      }
-
-      const carte = cartes[Math.floor(Math.random() * cartes.length)];
-      let contenu = "";
-
-      if (carte.texte) {
-        contenu = `<p>${carte.texte}</p>`;
-      } else {
-        contenu = `
-          <h2>${carte.titre}</h2>
-          <p><strong>Action :</strong> ${carte.action}</p>
-          <p><strong>Phrase :</strong> ${carte.phrase}</p>
-          <p><strong>Effet :</strong> ${carte.effet}</p>
-        `;
-      }
-
-      document.getElementById('carte').innerHTML = contenu;
-    }
-  </script>
-</body>
-</html>
+    document.getElementById('carte').innerHTML = contenu;
+  }
+</script>

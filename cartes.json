@@ -1,61 +1,31 @@
 [
   {
+    "titre": "Carte de l'Escargot Philosophe",
+    "action": "Avance à la vitesse d'un escargot philosophe.",
+    "phrase": "Je suis lente, mais je pense profond.",
+    "effet": "Active la réflexion lente et la tendresse rampante."
+  },
+  {
+    "titre": "Carte du Chapeau Invisible",
+    "action": "Porte un chapeau invisible et salue les passants comme un magicien fatigué.",
+    "phrase": "Je suis là, mais subtile.",
+    "effet": "Sème l'étonnement discret."
+  },
+  {
+    "titre": "Carte du Retour en Arrière",
+    "action": "Marche à reculons dans ton esprit, juste pour voir ce qui te suit.",
+    "phrase": "Je suis suivie par mes pensées anciennes.",
+    "effet": "Dialogue avec le passé sans nostalgie."
+  },
+  {
     "titre": "Carte du Trop-Fait Sans Fanfare",
     "action": "Énumère tout ce que tu as fait aujourd'hui, même les plus petits gestes.",
     "phrase": "Je suis une fourmi poétique, et j'ai déplacé des montagnes sans bruit.",
     "effet": "Reconnaissance immédiate, droit au repos."
   },
   {
-    "titre": "Carte du Traitement Sans Garantie",
-    "action": "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
-    "phrase": "Je nourris mes genoux comme on arrose une graine invisible.",
-    "effet": "Active la foi silencieuse."
-  },
-  {
-    "titre": "Carte de l'Appel Sans Réponse",
-    "action": "Rappelle un service, une personne, une institution, même si tu sais qu'ils ne répondront pas.",
-    "phrase": "Je parle dans le vide, mais ma voix existe.",
-    "effet": "Reconnaissance de l'effort invisible."
-  },
-  {
-    "titre": "Carte du Sac en Trop",
-    "action": "Porte un sac trop lourd sans râler (ou en râlant doucement).",
-    "phrase": "Je suis une mule poétique, et je transporte plus que des objets.",
-    "effet": "Dévoile tes forces cachées."
-  }
-  {
-    "titre": "Carte de la Voisine Défunte",
-    "action": "Pense à quelqu’un qui t’a agacée, puis à ce qu’elle t’a appris malgré elle.",
-    "phrase": "Même les présences rugueuses laissent une empreinte.",
-    "effet": "Apaisement des mémoires conflictuelles"
-  },
-  {
-    "titre": "Carte du Vélo Volé Vu",
-    "action": "Imagine que chaque objet volé garde en lui un souvenir de son ancien propriétaire.",
-    "phrase": "Les objets se souviennent, même quand les humains oublient.",
-    "effet": "Réactivation de la tendresse pour ce qui fut"
-  },
-  {
-    "titre": "Carte de la Conversation Inattendue",
-    "action": "Accueille une discussion imprévue comme un cadeau.",
-    "phrase": "Je suis disponible à l’imprévu qui me parle.",
-    "effet": "Ouverture à la rencontre douce"
-  },
-  {
-    "titre": "Carte de la Confiture Partagée",
-    "action": "Envoie un message de gratitude pour un petit geste reçu.",
-    "phrase": "Ta douceur m’a nourrie plus que tu ne crois.",
-    "effet": "Activation du lien invisible"
-  },
-  {
-    "titre": "Carte du Matin Brouillon",
-    "action": "Choisis un objet du quotidien (une clé, une tasse, une chaussure) et décrète qu’il est le “Gardien du Zen Retrouvé”. Tu peux lui parler, lui confier ton agacement, ou simplement le poser avec intention.",
-    "phrase": "Honorer le chaos doux du réveil.",
-    "effet": "Un soupir de soulagement. Et peut-être un sourire."
-  }
-  {
     "titre": "Carte du Réalisme Foudroyé",
-    "action": "Écris sur un papier : “Je vois clair. Je ressens fort. Je ne suis pas dupe.” Glisse-le dans ton portefeuille, à côté de tes pièces ou billets. C’est ton talisman de lucidité.",
+    "action": "Écris sur un papier : “Je vois clair. Je ressens fort. Je ne suis pas dupe.” Glisse-le dans ton portefeuille.",
     "phrase": "Nommer ce qui fait mal sans s’excuser.",
     "effet": "Une force tranquille. Et le droit de continuer à aimer ce qui ne se vend pas."
   },
@@ -67,21 +37,27 @@
   },
   {
     "titre": "Carte du Gris qui Parle",
-    "action": "1. Choisis une couleur qui te manque (rose, bleu, doré…). 2. Trouve-la quelque part — dans un objet, une image, une pensée. 3. Dis : “Je ne suis pas rien. Je suis celle qui cherche encore.”",
+    "action": "Choisis une couleur qui te manque. Trouve-la quelque part. Dis : “Je ne suis pas rien. Je suis celle qui cherche encore.”",
     "phrase": "Honorer le chaos sans s’y dissoudre.",
     "effet": "Une trace de toi dans le monde. Et le droit de ne pas aimer les infos ce matin."
   },
   {
     "titre": "Carte du Tempo Humain",
-    "action": "Après chaque tâche accomplie sans précipitation, offre-toi un souffle, un sourire, ou un regard complice à ton reflet.",
+    "action": "Accomplis une tâche sans précipitation. Puis offre-toi un souffle, un sourire, ou un regard complice à ton reflet.",
     "phrase": "Je ne suis pas une machine.",
-    "effet": "Tu ralentis. Tu respires. Tu fais les choses avec âme. Même si le temps s’étire, tu choisis la qualité plutôt que la vitesse. Tu honores ton rythme comme un art subtil."
+    "effet": "Tu ralentis. Tu respires. Tu fais les choses avec âme."
   },
   {
     "titre": "Carte de l’Illusion du Temps Manquant",
-    "action": "Choisis une tâche simple et fais-la en chantant une chanson inventée sur les horloges qui dansent en tutu. Puis déclare solennellement : “Je suis la Présidente du Club des Gens Qui Ont Le Temps.”",
+    "action": "Choisis une tâche simple et fais-la en chantant une chanson inventée sur les horloges qui dansent en tutu.",
     "phrase": "J’ai le temps, mais je cours après une horloge invisible.",
     "effet": "Tu offres un thé à l’horloge qui te poursuit et tu lui proposes de marcher en crabe."
+  },
+  {
+    "titre": "Carte de la Résolution Triomphante",
+    "action": "Danse intérieurement comme un escargot qui vient de résoudre un bug.",
+    "phrase": "Je suis une ligne de code qui respire enfin.",
+    "effet": "Activation de la joie technique et du droit à une pause chocolatée."
   }
-
 ]
+

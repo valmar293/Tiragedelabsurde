@@ -2,85 +2,94 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tirage de carte absurde</title>
+  <title>Tirage de cartes absurdes</title>
   <style>
     body {
       font-family: sans-serif;
-      text-align: center;
-      padding: 2em;
       background-color: #fdf6e3;
+      color: #333;
+      padding: 2em;
+    }
+    button {
+      padding: 0.5em 1em;
+      font-size: 1.2em;
+      background-color: #e0cfe3;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
     #carte {
       margin-top: 2em;
       padding: 1em;
-      border: 2px dashed #333;
+      border: 2px dashed #ccc;
       background-color: #fff;
-      font-size: 1.2em;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      border-radius: 10px;
     }
-    button {
-      padding: 0.5em 1em;
-      font-size: 1em;
-      cursor: pointer;
-      background-color: #e0c9a6;
-      border: none;
-      border-radius: 5px;
+    h2 {
+      color: #6a4c93;
     }
-    button:hover {
-      background-color: #d4b98c;
+    strong {
+      color: #444;
     }
   </style>
 </head>
 <body>
-  <h1>🎴 Tirage de carte absurde</h1>
+
+  <h1>Tire ta carte absurde</h1>
   <button onclick="tirerCarte()">Tirer une carte</button>
   <div id="carte">Aucune carte tirée pour l’instant.</div>
 
   <script>
     let cartes = [];
 
-    // Chargement du fichier JSON
-    fetch('./cartes.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Fichier introuvable");
-        }
-        return response.json();
-      })
+    // Charger les cartes depuis cartes.json
+    fetch('cartes.json')
+      .then(response => response.json())
       .then(data => {
-        cartes = data;
+        cartes = data.cartes;
       })
       .catch(error => {
-        document.getElementById('carte').innerText = "Erreur de chargement des cartes.";
+        document.getElementById("carte").innerHTML = "Erreur de chargement des cartes.";
         console.error("Erreur JSON :", error);
       });
 
-    // Fonction de tirage
     function tirerCarte() {
       if (cartes.length === 0) {
-        document.getElementById('carte').innerText = "Les cartes ne sont pas encore chargées.";
+        document.getElementById("carte").innerHTML = "Les cartes ne sont pas encore chargées.";
         return;
       }
 
-      const index = Math.floor(Math.random() * cartes.length);
-      const carte = cartes[index];
+      const carte = cartes[Math.floor(Math.random() * cartes.length)];
+      afficherCarte(carte);
+    }
 
-      // Vérification des champs
-      if (!carte.titre || !carte.action || !carte.phrase || !carte.effet) {
-        document.getElementById('carte').innerText = "Carte incomplète.";
-        return;
+    function afficherCarte(carte) {
+      let contenu = `<h2>${carte.titre}</h2>`;
+
+      if (carte.mission) {
+        contenu += `<p><strong>Mission :</strong> ${carte.mission}</p>`;
+      }
+      if (carte.action) {
+        contenu += `<p><strong>Action :</strong> ${carte.action}</p>`;
+      }
+      if (carte.effet) {
+        contenu += `<p><strong>Effet :</strong> ${carte.effet}</p>`;
+      }
+      if (carte.rituel) {
+        contenu += `<p><strong>Rituel :</strong> ${carte.rituel.replace(/\n/g, "<br>")}</p>`;
+      }
+      if (carte.recompense) {
+        contenu += `<p><strong>Récompense :</strong> ${carte.recompense}</p>`;
+      }
+      if (carte.phrase || carte.phrase_a_dire) {
+        const phrase = carte.phrase || carte.phrase_a_dire;
+        contenu += `<p><strong>Phrase à dire :</strong> ${phrase}</p>`;
       }
 
-      // Affichage de la carte
-      document.getElementById('carte').innerHTML = `
-        <strong>${carte.titre}</strong><br><br>
-        🌀 <em>Action :</em> ${carte.action}<br>
-        💬 <em>Phrase :</em> ${carte.phrase}<br>
-        ✨ <em>Effet :</em> ${carte.effet}
-      `;
+      document.getElementById("carte").innerHTML = contenu;
     }
   </script>
+
 </body>
 </html>
+

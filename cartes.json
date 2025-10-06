@@ -2,54 +2,46 @@
 [
   { "texte": "🐌 Aujourd’hui, avance à la vitesse d’un escargot philosophe." },
   { "texte": "🎩 Porte un chapeau invisible et salue les passants comme un magicien fatigué." },
-  { "texte": "🦶 Marche à reculons dans ton esprit, juste pour voir ce qui te suit." }
+  { "texte": "🦶 Marche à reculons dans ton esprit, juste pour voir ce qui te suit." },
 
 {
     "titre": "Carte du Trop-Fait Sans Fanfare",
     "action": "Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.",
     "phrase": "Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.",
-    "effet": "Reconnaissance immédiate, droit au repos."
-  },
+    "effet": "Reconnaissance immédiate, droit au repos."  },
   {
     "titre": "Carte du Traitement Sans Garantie",
     "action": "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
     "phrase": "Je nourris mes genoux comme on arrose une graine invisible.",
-    "effet": "Active la foi silencieuse."
-  },
+    "effet": "Active la foi silencieuse."  },
   {
     "titre": "Carte de l’Appel Sans Réponse",
     "action": "Rappelle un service, une personne, une institution, même si tu sais qu’ils ne répondront pas.",
     "phrase": "Je parle dans le vide, mais ma voix existe.",
-    "effet": "Reconnaissance de l’effort invisible."
-  },
+    "effet": "Reconnaissance de l’effort invisible." },
   {
     "titre": "Carte du Sac en Trop",
     "action": "Porte un sac trop lourd sans râler (ou en râlant doucement).",
     "phrase": "Je suis une mule poétique, et je transporte plus que des objets.",
-    "effet": "Droit à une pause royale."
-  },
+    "effet": "Droit à une pause royale."  },
   {
     "titre": "Carte de la Journée Trop Pleine",
     "action": "À la fin d’une journée dense, fais une liste de tout ce que tu as fait, même les micro-gestes.",
     "phrase": "Moi qui ne fais jamais rien, aujourd’hui j’ai traversé un monde.",
-    "effet": "Permission de ne rien faire demain."
-  },
+    "effet": "Permission de ne rien faire demain." },
   {
     "titre": "Carte du Je Ne Crois Plus Mais Je Fais Quand Même",
     "action": "Choisis une action que tu fais sans conviction, et fais-la avec tendresse.",
     "phrase": "Je suis la gardienne des gestes sans foi.",
-    "effet": "Activation du pouvoir de la persistance douce."
-  },
+    "effet": "Activation du pouvoir de la persistance douce."  },
   {
     "titre": "Carte de la Rencontre Possible",
     "action": "Lors d’un événement social, ouvre ton regard sans attente.",
     "phrase": "Je suis disponible à la surprise douce.",
-    "effet": "Activation du charme tranquille"
-  },
+    "effet": "Activation du charme tranquille" },
   {
     "titre": "Carte des Pieds qui Protestent",
     "action": "Retire tes chaussures et offre à tes pieds un moment de liberté.",
     "phrase": "Vous avez porté plus que prévu, je vous rends hommage.",
-    "effet": "Soulagement immédiat, permission de marcher moins demain"
-  }
+    "effet": "Soulagement immédiat, permission de marcher moins demain" }
 ]

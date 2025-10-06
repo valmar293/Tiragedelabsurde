@@ -32,7 +32,6 @@
     "phrase": "Je suis une mule poétique, et je transporte plus que des objets.",
     "effet": "Dévoile tes forces cachées."
   }
-  [
   {
     "titre": "Carte de la Voisine Défunte",
     "action": "Pense à quelqu’un qui t’a agacée, puis à ce qu’elle t’a appris malgré elle.",
@@ -63,5 +62,4 @@
     "phrase": "Honorer le chaos doux du réveil.",
     "effet": "Un soupir de soulagement. Et peut-être un sourire."
   }
-]
 ]

@@ -2,142 +2,62 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tirage de l'absurde</title>
+  <title>Tirage de carte absurde</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Georgia', serif;
       background-color: #fdf6e3;
-      color: #333;
       text-align: center;
       padding: 2em;
     }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-    p {
+    #carte {
+      margin-top: 2em;
+      padding: 1em;
+      border: 2px dashed #333;
+      background-color: #fff;
       font-size: 1.2em;
-      margin-bottom: 1.5em;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
     }
     button {
-      padding: 0.6em 1.2em;
+      padding: 0.5em 1em;
       font-size: 1em;
+      cursor: pointer;
       background-color: #e0c9a6;
       border: none;
       border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #d4b98f;
-    }
-    .carte {
-      margin-top: 2em;
-      padding: 1em;
-      border: 2px dashed #555;
-      background-color: #fff;
-      display: inline-block;
-      max-width: 500px;
-      font-style: italic;
-      white-space: pre-wrap;
-      line-height: 1.5;
-      font-size: 1.1em;
     }
   </style>
 </head>
 <body>
-  <h1>Tirage de l'absurde</h1>
-  <p>Bienvenue dans ton jeu poético-absurde. Clique pour tirer une carte.</p>
-  <button onclick="tirerCarte()">🎴 Tirer une carte</button>
-<div class="carte" id="carte"></div>
-
-
-
+  <h1>✨ Tirage de carte absurde ✨</h1>
+  <button onclick="tirerCarte()">Tirer une carte</button>
+  <div id="carte">Aucune carte tirée pour l’instant…</div>
 
   <script>
-    const cartes = [
-"Carte du Trop-Fait Sans Fanfare\nAction : Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.\nPhrase à dire : “Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.”\nEffet : Reconnaissance immédiate, droit au repos.",
+    let cartes = [];
 
-"Carte du Traitement Sans Garantie\nAction : Prends ton complément alimentaire comme un élixir magique, même si tu doutes.\nPhrase à dire : “Je nourris mes genoux comme on arrose une graine invisible.”\nEffet : Active la foi silencieuse.",
+    async function chargerCartes() {
+      try {
+        const response = await fetch('cartes.json');
+        cartes = await response.json();
+      } catch (error) {
+        document.getElementById('carte').innerText = "Erreur de chargement des cartes.";
+      }
+    }
 
-"Carte de l’Appel Sans Réponse\nAction : Rappelle un service, une personne, une institution, même si tu sais qu’ils ne répondront pas.\nPhrase à dire : “Je parle dans le vide, mais ma voix existe.”\nEffet : Reconnaissance de l’effort invisible.",
+    function tirerCarte() {
+      if (cartes.length === 0) {
+        document.getElementById('carte').innerText = "Aucune carte disponible.";
+        return;
+      }
+      const index = Math.floor(Math.random() * cartes.length);
+      const carte = cartes[index];
+      document.getElementById('carte').innerText = carte.texte;
+    }
 
-"Carte du Sac en Trop\nAction : Porte un sac trop lourd sans râler (ou en râlant doucement).\nPhrase à dire : “Je suis une mule poétique, et je transporte plus que des objets.”\nEffet : Droit à une pause royale.",
-
-"Carte de la Journée Trop Pleine\nAction : À la fin d’une journée dense, fais une liste de tout ce que tu as fait, même les micro-gestes.\nPhrase à dire : “Moi qui ne fais jamais rien, aujourd’hui j’ai traversé un monde.”\nEffet : Permission de ne rien faire demain.",
-
-"Carte du Je Ne Crois Plus Mais Je Fais Quand Même\nAction : Choisis une action que tu fais sans conviction, et fais-la avec tendresse.\nPhrase à dire : “Je suis la gardienne des gestes sans foi.”\nEffet : Activation du pouvoir de la persistance douce.",
-
-"Carte de la Rencontre Possible\nAction : Lors d’un événement social, ouvre ton regard sans attente.\nPhrase à dire : “Je suis disponible à la surprise douce.”\nEffet : Activation du charme tranquille.",
-
-"Carte des Pieds qui Protestent\nAction : Retire tes chaussures et offre à tes pieds un moment de liberté.\nPhrase à dire : “Vous avez porté plus que prévu, je vous rends hommage.”\nEffet : Soulagement immédiat, permission de marcher moins demain.",
-
-"Carte de la Voisine Défunte\nAction : Pense à quelqu’un qui t’a agacée, puis à ce qu’elle t’a appris malgré elle.\nPhrase à dire : “Même les présences rugueuses laissent une empreinte.”\nEffet : Apaisement des mémoires conflictuelles.",
-
-"Carte du Vélo Volé Vu\nAction : Imagine que chaque objet volé garde en lui un souvenir de son ancien propriétaire.\nPhrase à dire : “Les objets se souviennent, même quand les humains oublient.”\nEffet : Réactivation de la tendresse pour ce qui fut."
- "Carte de la Conversation Inattendue\nAction : Accueille une discussion imprévue comme un cadeau.\nPhrase à dire : “Je suis disponible à l’imprévu qui me parle.”\nEffet : Ouverture à la rencontre douce.",
-
-"Carte de la Confiture Partagée\nAction : Envoie un message de gratitude pour un petit geste reçu.\nPhrase à dire : “Ta douceur m’a nourrie plus que tu ne crois.”\nEffet : Activation du lien invisible.",
-
-"Carte du Matin Brouillon\nMission : Honorer le chaos doux du réveil.\nAction : Choisis un objet du quotidien (une clé, une tasse, une chaussure) et décrète qu’il est le “Gardien du Zen Retrouvé”. Tu peux lui parler, lui confier ton agacement, ou simplement le poser avec intention.\nRécompense : Un soupir de soulagement. Et peut-être un sourire.",
-
-"Carte du Réalisme Foudroyé\nMission : Nommer ce qui fait mal sans s’excuser.\nAction : Écris sur un papier : “Je vois clair. Je ressens fort. Je ne suis pas dupe.” Glisse-le dans ton portefeuille, à côté de tes pièces ou billets. C’est ton talisman de lucidité.\nRécompense : Une force tranquille. Et le droit de continuer à aimer ce qui ne se vend pas.",
-
-"Carte du Geste Résistant\nMission : Répondre à la noirceur par un acte doux.\nAction : Choisis un geste minuscule qui dit “je suis vivante”.\nRécompense : Une sensation de pouvoir intérieur.",
-
-"Carte du Gris qui Parle\nMission : Honorer le chaos sans s’y dissoudre.\nAction :\n1. Choisis une couleur qui te manque (rose, bleu, doré…).\n2. Trouve-la quelque part — dans un objet, une image, une pensée.\n3. Dis : “Je ne suis pas rien. Je suis celle qui cherche encore.”\nRécompense : Une trace de toi dans le monde. Et le droit de ne pas aimer les infos ce matin.",
-
-"Carte du Tempo Humain\nMission : Présence Bienveillante\nTitre : Je ne suis pas une machine.\nEffet : Tu ralentis. Tu respires. Tu fais les choses avec âme.\nMême si le temps s’étire, tu choisis la qualité plutôt que la vitesse.\nTu honores ton rythme comme un art subtil.\nRituel bonus : Après chaque tâche accomplie sans précipitation, offre-toi un souffle, un sourire, ou un regard complice à ton reflet.",
-
-"Carte de l’Illusion du Temps Manquant\nCatégorie : Absurdies Quotidiennes\nTitre : J’ai le temps, mais je cours après une horloge invisible.\nEffet : Tu offres un thé à l’horloge qui te poursuit et tu lui proposes de marcher en crabe.\nRituel bonus : Choisis une tâche simple et fais-la en chantant une chanson inventée sur les horloges qui dansent en tutu.\nPuis déclare solennellement : “Je suis la Présidente du Club des Gens Qui Ont Le Temps.”",
-
-"Carte de la Banane Courbée\nCatégorie : Corps en Rébellion Douce\nTitre : Je veux me tenir droite, mais je suis une banane.\nEffet : Tu redresses ton dos avec noblesse, puis tu te courbes avec panache.\nTu es à la fois colonne vertébrale et point d’interrogation existentiel.\nRituel bonus : Fais trois pas en te tenant droite comme une baguette.\nPuis plie légèrement les genoux et murmure : “Je suis une banane libre.”"
-"Carte de la Conversation Inattendue\nAction : Accueille une discussion imprévue comme un cadeau.\nPhrase à dire : “Je suis disponible à l’imprévu qui me parle.”\nEffet : Ouverture à la rencontre douce.",
-
-"Carte de la Confiture Partagée\nAction : Envoie un message de gratitude pour un petit geste reçu.\nPhrase à dire : “Ta douceur m’a nourrie plus que tu ne crois.”\nEffet : Activation du lien invisible.",
-
-"Carte du Matin Brouillon\nMission : Honorer le chaos doux du réveil.\nAction : Choisis un objet du quotidien (une clé, une tasse, une chaussure) et décrète qu’il est le “Gardien du Zen Retrouvé”. Tu peux lui parler, lui confier ton agacement, ou simplement le poser avec intention.\nRécompense : Un soupir de soulagement. Et peut-être un sourire.",
-
-"Carte du Réalisme Foudroyé\nMission : Nommer ce qui fait mal sans s’excuser.\nAction : Écris sur un papier : “Je vois clair. Je ressens fort. Je ne suis pas dupe.” Glisse-le dans ton portefeuille, à côté de tes pièces ou billets. C’est ton talisman de lucidité.\nRécompense : Une force tranquille. Et le droit de continuer à aimer ce qui ne se vend pas.",
-
-"Carte du Geste Résistant\nMission : Répondre à la noirceur par un acte doux.\nAction : Choisis un geste minuscule qui dit “je suis vivante”.\nRécompense : Une sensation de pouvoir intérieur.",
-
-"Carte du Gris qui Parle\nMission : Honorer le chaos sans s’y dissoudre.\nAction :\n1. Choisis une couleur qui te manque (rose, bleu, doré…).\n2. Trouve-la quelque part — dans un objet, une image, une pensée.\n3. Dis : “Je ne suis pas rien. Je suis celle qui cherche encore.”\nRécompense : Une trace de toi dans le monde. Et le droit de ne pas aimer les infos ce matin.",
-
-"Carte du Tempo Humain\nMission : Présence Bienveillante\nTitre : Je ne suis pas une machine.\nEffet : Tu ralentis. Tu respires. Tu fais les choses avec âme.\nMême si le temps s’étire, tu choisis la qualité plutôt que la vitesse.\nTu honores ton rythme comme un art subtil.\nRituel bonus : Après chaque tâche accomplie sans précipitation, offre-toi un souffle, un sourire, ou un regard complice à ton reflet.",
-
-"Carte de l’Illusion du Temps Manquant\nCatégorie : Absurdies Quotidiennes\nTitre : J’ai le temps, mais je cours après une horloge invisible.\nEffet : Tu offres un thé à l’horloge qui te poursuit et tu lui proposes de marcher en crabe.\nRituel bonus : Choisis une tâche simple et fais-la en chantant une chanson inventée sur les horloges qui dansent en tutu.\nPuis déclare solennellement : “Je suis la Présidente du Club des Gens Qui Ont Le Temps.”",
-
-"Carte de la Banane Courbée\nCatégorie : Corps en Rébellion Douce\nTitre : Je veux me tenir droite, mais je suis une banane.\nEffet : Tu redresses ton dos avec noblesse, puis tu te courbes avec panache.\nTu es à la fois colonne vertébrale et point d’interrogation existentiel.\nRituel bonus : Fais trois pas en te tenant droite comme une baguette.\nPuis plie légèrement les genoux et murmure : “Je suis une banane libre.”"
-        ];
-
-  function tirerCarte() {
-  // Sélectionne la div où afficher la carte
-  const carteDiv = document.getElementById("carte");
-
-  // Vérifie que la div existe
-  if (!carteDiv) {
-    console.error("La div avec l'ID 'carte' est introuvable.");
-    return;
-  }
-
-  // Vérifie que le tableau de cartes existe et contient des éléments
-  if (!cartes || !cartes.length) {
-    console.error("Le tableau 'cartes' est vide ou non défini.");
-    return;
-  }
-
-  // Tire une carte au hasard
-  const index = Math.floor(Math.random() * cartes.length);
-  const carte = cartes[index];
-
-  // Affiche la carte dans la div
-  carteDiv.innerHTML = `
-    <div class="carte">
-      <h2>${carte.titre}</h2>
-      <p>${carte.texte}</p>
-      <p class="categorie">${carte.categorie}</p>
-    </div>
-  `;
-}
-
-
+    chargerCartes();
+  </script>
+</body>
+</html>v

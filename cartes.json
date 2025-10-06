@@ -23,5 +23,36 @@
     "phrase": "Je suis une fourmi poétique, et j'ai déplacé des montagnes sans bruit.",
     "effet": "Reconnaissance immédiate, droit au repos."
   }
+  {
+    "titre": "Carte du Réalisme Foudroyé",
+    "mission": "Nommer ce qui fait mal sans s’excuser",
+    "action": "Écris sur un papier : “Je vois clair. Je ressens fort. Je ne suis pas dupe.” Glisse-le dans ton portefeuille, à côté de tes pièces ou billets. C’est ton talisman de lucidité.",
+    "effet": "Une force tranquille. Et le droit de continuer à aimer ce qui ne se vend pas."
+  },
+  {
+    "titre": "Carte du Geste Résistant",
+    "mission": "Répondre à la noirceur par un acte doux",
+    "action": "Choisis un geste minuscule qui dit “je suis vivante”.",
+    "effet": "Une sensation de pouvoir intérieur."
+  },
+  {
+    "titre": "Carte du Gris qui Parle",
+    "mission": "Honorer le chaos sans s’y dissoudre",
+    "action": "1. Choisis une couleur qui te manque (rose, bleu, doré…).\\n2. Trouve-la quelque part — dans un objet, une image, une pensée.\\n3. Dis : “Je ne suis pas rien. Je suis celle qui cherche encore.”",
+    "effet": "Une trace de toi dans le monde. Et le droit de ne pas aimer les infos ce matin."
+  },
+  {
+    "titre": "Carte du Tempo Humain",
+    "mission": "Présence Bienveillante",
+    "action": "Je ne suis pas une machine.",
+    "effet": "Tu ralentis. Tu respires. Tu fais les choses avec âme.\\nMême si le temps s’étire, tu choisis la qualité plutôt que la vitesse.\\nTu honores ton rythme comme un art subtil.\\nRituel bonus : Après chaque tâche accomplie sans précipitation, offre-toi un souffle, un sourire, ou un regard complice à ton reflet."
+  },
+  {
+    "titre": "Carte de l’Illusion du Temps Manquant",
+    "mission": "Absurdies Quotidiennes",
+    "action": "J’ai le temps, mais je cours après une horloge invisible.",
+    "effet": "Tu offres un thé à l’horloge qui te poursuit et tu lui proposes de marcher en crabe.\\nRituel bonus : Choisis une tâche simple et fais-la en chantant une chanson inventée sur les horloges qui dansent en tutu.\\nPuis déclare solennellement : “Je suis la Présidente du Club des Gens Qui Ont Le Temps.”"
+  }
+
 ]
 

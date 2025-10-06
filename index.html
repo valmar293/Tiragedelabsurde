@@ -16,11 +16,20 @@
             border: 2px dashed #333;
             background-color: #fff;
             font-size: 1.2em;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         button {
             padding: 0.5em 1em;
             font-size: 1em;
             cursor: pointer;
+            background-color: #e0c9a6;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #d4b98c;
         }
     </style>
 </head>
@@ -51,7 +60,12 @@
             }
             const index = Math.floor(Math.random() * cartes.length);
             const carte = cartes[index];
-            document.getElementById('carte').innerText = carte.texte || "Carte sans texte.";
+            document.getElementById('carte').innerHTML = `
+                <strong>${carte.titre}</strong><br><br>
+                🌀 <em>Action :</em> ${carte.action}<br>
+                💬 <em>Phrase :</em> ${carte.phrase}<br>
+                ✨ <em>Effet :</em> ${carte.effet}
+            `;
         }
     </script>
 </body>

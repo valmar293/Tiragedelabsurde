@@ -9,17 +9,19 @@
       background-color: #fdf6e3;
       color: #333;
       padding: 2em;
+      max-width: 800px;
+      margin: auto;
     }
     button {
-      padding: 0.5em 1em;
-      font-size: 1.2em;
+      padding: 0.6em 1.2em;
+      font-size: 1.1em;
       background-color: #e0cfe3;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
+      margin-bottom: 1em;
     }
     #carte {
-      margin-top: 2em;
       padding: 1em;
       border: 2px dashed #ccc;
       background-color: #fff;
@@ -27,6 +29,10 @@
     }
     h2 {
       color: #6a4c93;
+      margin-top: 0;
+    }
+    p {
+      margin: 0.5em 0;
     }
     strong {
       color: #444;
@@ -36,7 +42,7 @@
 <body>
 
   <h1>Tire ta carte absurde</h1>
-  <button onclick="tirerCarte()">Tirer une carte</button>
+  <button onclick="tirerCarte()">🎴 Tirer une carte</button>
   <div id="carte">Aucune carte tirée pour l’instant.</div>
 
   <script>
@@ -49,13 +55,13 @@
         cartes = data.cartes;
       })
       .catch(error => {
-        document.getElementById("carte").innerHTML = "Erreur de chargement des cartes.";
+        document.getElementById("carte").innerHTML = "❌ Erreur de chargement des cartes.";
         console.error("Erreur JSON :", error);
       });
 
     function tirerCarte() {
       if (cartes.length === 0) {
-        document.getElementById("carte").innerHTML = "Les cartes ne sont pas encore chargées.";
+        document.getElementById("carte").innerHTML = "⏳ Les cartes ne sont pas encore chargées.";
         return;
       }
 
@@ -92,4 +98,3 @@
 
 </body>
 </html>
-

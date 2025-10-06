@@ -32,4 +32,36 @@
     "phrase": "Je suis une mule poétique, et je transporte plus que des objets.",
     "effet": "Dévoile tes forces cachées."
   }
+  [
+  {
+    "titre": "Carte de la Voisine Défunte",
+    "action": "Pense à quelqu’un qui t’a agacée, puis à ce qu’elle t’a appris malgré elle.",
+    "phrase": "Même les présences rugueuses laissent une empreinte.",
+    "effet": "Apaisement des mémoires conflictuelles"
+  },
+  {
+    "titre": "Carte du Vélo Volé Vu",
+    "action": "Imagine que chaque objet volé garde en lui un souvenir de son ancien propriétaire.",
+    "phrase": "Les objets se souviennent, même quand les humains oublient.",
+    "effet": "Réactivation de la tendresse pour ce qui fut"
+  },
+  {
+    "titre": "Carte de la Conversation Inattendue",
+    "action": "Accueille une discussion imprévue comme un cadeau.",
+    "phrase": "Je suis disponible à l’imprévu qui me parle.",
+    "effet": "Ouverture à la rencontre douce"
+  },
+  {
+    "titre": "Carte de la Confiture Partagée",
+    "action": "Envoie un message de gratitude pour un petit geste reçu.",
+    "phrase": "Ta douceur m’a nourrie plus que tu ne crois.",
+    "effet": "Activation du lien invisible"
+  },
+  {
+    "titre": "Carte du Matin Brouillon",
+    "action": "Choisis un objet du quotidien (une clé, une tasse, une chaussure) et décrète qu’il est le “Gardien du Zen Retrouvé”. Tu peux lui parler, lui confier ton agacement, ou simplement le poser avec intention.",
+    "phrase": "Honorer le chaos doux du réveil.",
+    "effet": "Un soupir de soulagement. Et peut-être un sourire."
+  }
+]
 ]

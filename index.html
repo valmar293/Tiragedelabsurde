@@ -48,16 +48,28 @@
   <script>
     let cartes = [];
 
-    // Charger les cartes depuis cartes.json
-    fetch('cartes.json')
-      .then(response => response.json())
-      .then(data => {
-        cartes = data.cartes;
-      })
-      .catch(error => {
-        document.getElementById("carte").innerHTML = "❌ Erreur de chargement des cartes.";
-        console.error("Erreur JSON :", error);
-      });
+  const cartes = [
+  {
+    "titre": "Carte du Cléclair",
+    "mission": "Sortir, même si le trottoir te regarde bizarrement.",
+    "action": "Enfourcher ton vélo imaginaire...",
+    "effet": "Tu traverses l’inertie...",
+    "rituel": "Avant de partir, saluer ton reflet...",
+    "recompense": "Une clé neuve.",
+    "phrase": "Je suis la tempête qui va chez le serrurier."
+  },
+  {
+    "titre": "Carte du Rien Nécessaire",
+    "action": "S’allonger comme une étoile de mer philosophe.",
+    "effet": "Tu deviens une huître libre.",
+    "rituel": "Imaginer que chaque pensée est un pigeon en monocle.",
+    "recompense": "Le droit de ne pas répondre aux textos.",
+    "phrase": "Je suis en grève de moi-même."
+  }
+  // Tu peux ajouter autant de cartes que tu veux ici
+];
+
+
 
     function tirerCarte() {
       if (cartes.length === 0) {

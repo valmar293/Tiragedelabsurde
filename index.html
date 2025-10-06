@@ -43,7 +43,12 @@
 
     // Chargement du fichier JSON
     fetch('./cartes.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Fichier introuvable");
+        }
+        return response.json();
+      })
       .then(data => {
         cartes = data;
       })
@@ -58,10 +63,17 @@
         document.getElementById('carte').innerText = "Les cartes ne sont pas encore chargées.";
         return;
       }
+
       const index = Math.floor(Math.random() * cartes.length);
       const carte = cartes[index];
 
-      // Affichage des champs existants
+      // Vérification des champs
+      if (!carte.titre || !carte.action || !carte.phrase || !carte.effet) {
+        document.getElementById('carte').innerText = "Carte incomplète.";
+        return;
+      }
+
+      // Affichage de la carte
       document.getElementById('carte').innerHTML = `
         <strong>${carte.titre}</strong><br><br>
         🌀 <em>Action :</em> ${carte.action}<br>

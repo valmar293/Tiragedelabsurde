@@ -137,16 +137,20 @@
     ];
 
     function tirerCarte() {
-      const carte = cartes[Math.floor(Math.random() * cartes.length)];
-      let html = `<h2>${carte.titre}</h2>`;
-      html += `<p><strong>Action :</strong> ${carte.action}</p>`;
-      html += `<p><strong>Effet :</strong> ${carte.effet}</p>`;
-      html += `<p><strong>Récompense :</strong> ${carte.recompense}</p>`;
-      if (carte.rituel) {
-        html += `<p><strong>Rituel :</strong><br>${carte.rituel.replace(/\n/g, "<br>")}</p>`;
-      }
-      if (carte.phrase) {
-        html += `<p><em>${carte.phrase}</em></p>`;
+  const carte = cartes[Math.floor(Math.random() * cartes.length)];
+  let html = `<h2>${carte.titre}</h2>`;
+  html += `<p><strong>Action :</strong> ${carte.action}</p>`;
+  html += `<p><strong>Effet :</strong> ${carte.effet}</p>`;
+  html += `<p><strong>Récompense :</strong> ${carte.recompense}</p>`;
+  if (carte.rituel) {
+    html += `<p><strong>Rituel :</strong><br>${carte.rituel.replace(/\n/g, "<br>")}</p>`;
+  }
+  if (carte.phrase) {
+    html += `<p><em>${carte.phrase}</em></p>`;
+  }
+  document.getElementById("carte").innerHTML = html;
+
+
       }
       document.getElementById("carte").innerHTML = html;
     }

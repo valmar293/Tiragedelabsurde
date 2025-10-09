@@ -50,7 +50,13 @@
   <div id="carte">Aucune carte tirée pour l’instant.</div>
 
   <script>
+    
+    let cartesRestantes;
+
     const cartes = [
+      cartesRestantes = [...cartes]; // copie du deck original
+
+
       {
         titre: "Carte du J’en ai marre de cet informatique",
         action: "Soupirer devant l’écran comme si tu auditionnais pour un rôle dramatique.",

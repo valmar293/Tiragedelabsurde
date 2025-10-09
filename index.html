@@ -46,39 +46,11 @@
 <body>
 
   <h1>Tire ta carte absurde</h1>
-  <button onclick="afficherNouvelleCarte()">🎴 Tirer une carte</button>
+  <button onclick="tirerCarte()">🎴 Tirer une carte</button>
   <div id="carte">Aucune carte tirée pour l’instant.</div>
 
   <script>
-   // Historique des dernières cartes tirées
-let dernieresCartes = [];
-
-// Mélange le deck
-function melangerDeck(deck) {
-  for (let i = deck.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [deck[i], deck[j]] = [deck[j], deck[i]];
-  }
-  return deck;
-}
-
-// Tirage sans répétition
-function tirerSansRepetition(deck) {
-  let carte;
-  do {
-    carte = deck[Math.floor(Math.random() * deck.length)];
-  } while (dernieresCartes.includes(carte.titre) && deck.length > dernieresCartes.length);
-
-  dernieresCartes.push(carte.titre);
-  if (dernieresCartes.length > 5) dernieresCartes.shift(); // garde les 5 dernières
-
-  return carte;
-}
-
-// Tirage initial (remplace ta ligne "const carte =")
-const carte = tirerSansRepetition(melangerDeck(cartes));
-
- = [
+    const cartes = [
       {
         titre: "Carte du J’en ai marre de cet informatique",
         action: "Soupirer devant l’écran comme si tu auditionnais pour un rôle dramatique.",
@@ -157,6 +129,12 @@ const carte = tirerSansRepetition(melangerDeck(cartes));
       "phrase": "Je suis la tempête qui va chez le serrurier."
     },
       {
+Titre : "Carte du Trop-Fait Sans Fanfare",
+Action : "Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.",
+Recompense : "Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.",
+Effet : "Reconnaissance immédiate, droit au repos."
+   },
+      {
 titre : "Carte du Traitement Sans Garantie",
 Action : "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
 Récompense : "Je nourris mes genoux comme on arrose une graine invisible.",
@@ -225,9 +203,9 @@ Effet : "Activation du pouvoir de la persistance douce."
 {
   "titre": "Le psy était un lampadaire",
   "action": "S’asseoir face à une source de lumière en espérant une écoute",
-  "effet": "Éclaire la pièce(mais pas ton âme).",
-  "recompense": "Bronzage émotionnel (léger réchauffement du front intérieur)."
-},
+  "effet": "Éclaire la pièce (mais pas ton âme)",
+  "recompense": "Bronzage émotionnel (léger réchauffement du front intérieur)"
+}
 
     ];
 

@@ -196,28 +196,44 @@ Effet : "Activation du pouvoir de la persistance douce."
 }
 
     ];
-    
-let dernierIndex = -1;
-    let memoireRecentes = [];
+    let dernierIndex = -1;
+let memoireRecentes = [];
 
-    function tirerCarte() {
+function tirerCarte() {
   const tailleMemoire = Math.min(5, Math.floor(cartes.length / 2));
   let index;
   let tentatives = 0;
+  const maxTentatives = 20;
 
-do {
-  index = Math.floor(Math.random() * cartes.length);
-} while (index === dernierIndex && cartes.length > 1);
-dernierIndex = index;
-const carte = cartes[index];
-      document.getElementById("carte").innerHTML = `
-        <h2>${carte.titre}</h2>
-        <p><strong>Action :</strong> ${carte.action}</p>
-        <p><strong>Effet :</strong> ${carte.effet}</p>
-        <p><strong>Récompense :</strong> ${carte.recompense}</p>
-        <p><strong>Rituel :</strong><br>${carte.rituel.replace(/\n/g, "<br>")}</p>
-        <p><em>${carte.phrase}</em></p>
-      `;
+  do {
+    index = Math.floor(Math.random() * cartes.length);
+    tentatives++;
+  } while (
+    (index === dernierIndex || memoireRecentes.includes(index)) &&
+    tentatives < maxTentatives
+  );
+
+  dernierIndex = index;
+
+  // Mettre à jour la mémoire des cartes récemment tirées
+  memoireRecentes.push(index);
+  if (memoireRecentes.length > tailleMemoire) {
+    memoireRecentes.shift(); // on enlève la plus ancienne
+  }
+
+  const carte = cartes[index];
+  document.getElementById("carte").innerHTML = `
+    <h2>${carte.titre}</h2>
+    <p><strong>Action :</strong> ${carte.action}</p>
+    <p><strong>Effet :</strong> ${carte.effet}</p>
+    <p><strong>Récompense :</strong> ${carte.recompense}</p>
+    <p><strong>Rituel :</strong><br>${carte.rituel.replace(/\n/g, "<br>")}</p>
+    <p><em>${carte.phrase}</em></p>
+  `;
+}
+
+
+
     }
   </script>
 

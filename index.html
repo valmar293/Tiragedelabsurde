@@ -199,7 +199,12 @@ Effet : "Activation du pouvoir de la persistance douce."
 let dernierIndex = -1;
 
     function tirerCarte() {
-      const carte = cartes[Math.floor(Math.random() * cartes.length)];
+     let index;
+do {
+  index = Math.floor(Math.random() * cartes.length);
+} while (index === dernierIndex && cartes.length > 1);
+dernierIndex = index;
+const carte = cartes[index];
       document.getElementById("carte").innerHTML = `
         <h2>${carte.titre}</h2>
         <p><strong>Action :</strong> ${carte.action}</p>

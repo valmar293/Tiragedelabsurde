@@ -223,27 +223,27 @@ let memoireRecentes = [];
 
 function tirerCarte() {
   const tailleMemoire = Math.min(5, Math.floor(cartes.length / 2));
-  let index;
-  let tentatives = 0;
-  const maxTentatives = 20;
 
-  do {
-    index = Math.floor(Math.random() * cartes.length);
-    tentatives++;
-  } while (
-    (index === dernierIndex || memoireRecentes.includes(index)) &&
-    tentatives < maxTentatives
-  );
+  // Filtrer les cartes non récentes
+  const cartesDisponibles = cartes.filter(carte => !memoireRecentes.includes(carte.id));
 
-  dernierIndex = index;
-
-  // Mettre à jour la mémoire des cartes récemment tirées
-  memoireRecentes.push(index);
-  if (memoireRecentes.length > tailleMemoire) {
-    memoireRecentes.shift(); // on enlève la plus ancienne
+  // Si toutes les cartes sont récentes, on réinitialise la mémoire
+  if (cartesDisponibles.length === 0) {
+    memoireRecentes = [];
+    return tirerCarte(); // relancer le tirage
   }
 
-  const carte = cartes[index];
+  // Tirage aléatoire parmi les cartes disponibles
+  const index = Math.floor(Math.random() * cartesDisponibles.length);
+  const carte = cartesDisponibles[index];
+
+  // Mise à jour de la mémoire
+  memoireRecentes.push(carte.id);
+  if (memoireRecentes.length > tailleMemoire) {
+    memoireRecentes.shift();
+  }
+
+  // Affichage
   document.getElementById("carte").innerHTML = `
     <h2>${carte.titre}</h2>
     <p><strong>Action :</strong> ${carte.action}</p>

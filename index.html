@@ -200,9 +200,11 @@ Effet : "Activation du pouvoir de la persistance douce."
 let dernierIndex = -1;
     let memoireRecentes = [];
 
-
     function tirerCarte() {
-     let index;
+  const tailleMemoire = Math.min(5, Math.floor(cartes.length / 2));
+  let index;
+  let tentatives = 0;
+
 do {
   index = Math.floor(Math.random() * cartes.length);
 } while (index === dernierIndex && cartes.length > 1);

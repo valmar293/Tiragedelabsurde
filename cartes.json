@@ -180,7 +180,7 @@
   "titre": "La Pilule du Peut-Être",
   "action": "Avaler un cachet sans certitude. Offrir un clin d’œil à ton mémoire brumeuse.",
   "effet": "Ton corps reçoit le message : 'Je prends soin de toi, même dans le doute.'",
-  "récompense: "Tu gagnes le droit de ne pas te souvenir. Et de recommencer, si besoin, avec tendresse."
+  "Recompense" : "tu gagnes le droit de ne rien dire et de recommencer si besoin est."
 },
       {
         "id": 26,

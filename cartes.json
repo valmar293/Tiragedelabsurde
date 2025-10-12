@@ -93,10 +93,10 @@
 },
 {
   "id": 13,
-"titre" : "carte du traitement sans garantie",
-"action" : "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
-"recompense" : "Je nourris mes genoux comme on arrose une graine invisible.",
-"effet" : "Active la foi silencieuse."
+"titre": "carte du traitement sans garantie",
+"action": "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
+"recompense": "Je nourris mes genoux comme on arrose une graine invisible.",
+"effet": "Active la foi silencieuse."
 },
 {
   "id": 14,
@@ -114,10 +114,10 @@
 },
 {
   "id": 16,
-"titre" : "carte du je ne crois plus mais je fais quand même",
-"action" : "Choisis une action que tu fais sans conviction, et fais-la avec tendresse.",
-"recompense" : "Je suis la gardienne des gestes sans foi.",
-"effet" : "Activation du pouvoir de la persistance douce."
+"titre": "carte du je ne crois plus mais je fais quand même",
+"action": "Choisis une action que tu fais sans conviction, et fais-la avec tendresse.",
+"recompense": "Je suis la gardienne des gestes sans foi.",
+"effet": "Activation du pouvoir de la persistance douce."
 },
 {
   "id": 17,

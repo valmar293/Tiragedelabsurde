@@ -52,10 +52,12 @@
         document.getElementById("carte").innerText = "Erreur de chargement des cartes.";
       });
 
-    function tirerCarte() {
-      if (cartes.length === 0) {
-        alert("Les cartes ne sont pas encore chargées !");
-        return;
+   function tirerCarte() {
+  if (!cartes || cartes.length === 0) {
+    document.getElementById("carte").innerText = "Les cartes ne sont pas encore chargées.";
+    return;
+
+
       }
 
       const carte = cartes[Math.floor(Math.random() * cartes.length)];

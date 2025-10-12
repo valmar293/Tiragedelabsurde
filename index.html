@@ -280,30 +280,38 @@ Effet : "Activation du pouvoir de la persistance douce."
 
 
     ];
-    let dernierIndex = -1;
+  let dernierIndex = -1;
 let memoireRecentes = [];
 
 function tirerCarte() {
   const tailleMemoire = Math.min(5, Math.floor(cartes.length / 2));
 
   // Filtrer les cartes non récentes
-  const cartesDisponibles = cartes.filter(carte => !memoireRecentes.includes(carte.id));
+  let cartesDisponibles = cartes.filter(carte => !memoireRecentes.includes(carte.id));
 
   // Si toutes les cartes sont récentes, on réinitialise la mémoire
   if (cartesDisponibles.length === 0) {
     memoireRecentes = [];
-    return tirerCarte(); // relancer le tirage
+    cartesDisponibles = [...cartes]; // relancer avec toutes les cartes
   }
 
   // Tirage aléatoire parmi les cartes disponibles
   const index = Math.floor(Math.random() * cartesDisponibles.length);
-  const carte = cartesDisponibles[index];
+  const carteTirée = cartesDisponibles[index];
 
   // Mise à jour de la mémoire
-  memoireRecentes.push(carte.id);
+  memoireRecentes.push(carteTirée.id);
   if (memoireRecentes.length > tailleMemoire) {
-    memoireRecentes.shift();
+    memoireRecentes.shift(); // retirer la plus ancienne
   }
+
+  // Mise à jour de l’index si tu veux l’utiliser ailleurs
+  dernierIndex = index;
+
+  return carteTirée;
+}
+
+
 
   // Affichage
   document.getElementById("carte").innerHTML = `

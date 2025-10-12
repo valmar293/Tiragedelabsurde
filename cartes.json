@@ -85,13 +85,6 @@
 "phrase": "Je suis la tempête qui va chez le serrurier."
 },
 {
-  "id": 12,
-"titre": "carte du trop fait sans fanfare",
-"action": "Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.",
-"recompense": "Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.",
-"effet": "Reconnaissance immédiate, droit au repos."
-},
-{
   "id": 13,
 "titre": "carte du traitement sans garantie",
 "action": "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
@@ -161,13 +154,7 @@
 "recompense" : "Je suis la gardienne des gestes sans foi.",
 "effet" : "Activation du pouvoir de la persistance douce."
 },
-      {
-        "id": 23,
-  "titre": "Le Sourcil du Refus",
-  "action": "Hausser un sourcil sans raison. Si quelqu’un te demande pourquoi, répondre 'pour équilibrer le cosmos'.",
-  "effet": "Un silence se crée autour de toi, propice à la réflexion ou à la sieste debout.",
-  "recompense": "Tu gagnes le droit de refuser une chose sans te justifier. Même les molécules t’applaudissent en secret."
-},
+  
 {
   "id": 24,
   "titre": "La Présence Inutile mais Obligatoire",
@@ -217,4 +204,4 @@
     "recompense": "+1 en perception ralentie, +1 en absurdité temporelle.",
     "ritual": "Choisis une tâche minuscule (plier un mouchoir, aligner des miettes). Fais-la comme si elle durait une heure."
   }
-];
+]

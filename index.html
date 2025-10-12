@@ -1,291 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Tirage de carte absurde</title>
-<style>
-body {
-font-family: sans-serif;
-background-color: #fdf6e3;
-color: #333;
-padding: 2em;
-max-width: 800px;
-margin: auto;
-}
-button {
-padding: 0.6em 1.2em;
-font-size: 1.1em;
-background-color: #e0cfe3;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-margin-bottom: 1em;
-}
-#carte {
-padding: 1em;
-border: 2px dashed #ccc;
-background-color: #fff;
-border-radius: 10px;
-}
-h2 {
-color: #6a4c93;
-margin-top: 0;
-}
-p {
-margin: 0.5em 0;
-}
-strong {
-color: #444;
-}
-em {
-color: #6a4c93;
-font-style: italic;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Tire ta carte absurde</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2em;
+      background-color: #fdf6e3;
+      color: #333;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 0.5em 1em;
+      background-color: #e0c3fc;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #carte {
+      margin-top: 2em;
+      padding: 1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+  </style>
 </head>
 <body>
+  <h1>Tire ta carte absurde</h1>
+  <button onclick="tirerCarte()">🎴 Tirer une carte</button>
+  <div id="carte">Aucune carte tirée pour l’instant.</div>
 
-<h1>Tire ta carte absurde</h1>
-<button onclick="tirerCarte()">🎴 Tirer une carte</button>
-<div id="carte">Aucune carte tirée pour l’instant.</div>
+  <script>
+    let cartes = [];
 
-<script>
-const cartes = [
-{
-  id: 1,
-titre: "Carte du J’en ai marre de cet informatique",
-action: "Soupirer devant l’écran comme si tu auditionnais pour un rôle dramatique.",
-effet: "Le bug devient un personnage secondaire dans ta tragédie intérieure.",
-recompense: "Une pause thé, un regard complice à ta plante verte, et le droit de ne rien corriger tout de suite.",
-rituel: `1. "Fermer un onglet avec lenteur et dignité.",
-2. Dire à voix basse : “Je suis une humaine, pas une machine.”,
-3. Offrir un câlin mental à ton clavier.`,
-phrase: "Je suis la souveraine du ras-le-bol numérique."
-},
-{
-  id: 2,
-"titre": "Carte du Double Coup Domestique",
-"action": "Brosser les dents avec panache, tout en lançant un regard accusateur à l’évier.",
-"effet": "L’évier se nettoie par osmose morale, impressionné par ta détermination bucco-dentaire.",
-"rituel": "1. Cracher avec élégance.\n2. Essuyer l’évier comme si tu bénissais un autel.\n3. Dire à voix basse : \"Deux mouches d’un seul claquement de brosse.\""
-},
-{
-  id: 3,
-"titre": "Carte du Flou Sacré",
-"action": "Fixer un mur, une plante, ou ton propre pied en te demandant : \"Est-ce que c’est ça, le sens de la vie ?\"",
-"effet": "Le flou devient une brume créative où les envies se déguisent en pigeons philosophes.",
-"recompense": "1. Soupirer comme une diva en fin de spectacle.\n2. Imaginer que ta culpabilité est un lama qui fait du moonwalk.\n3. Lui offrir un banc mental avec coussins moelleux et une pancarte : \"Réservé aux pensées floues.\""
-},
-{
-  id: 4,
-"titre": "La patate cosmique en robe de chambre",
-"action": "Se lever en traînant une chaussette comme sceptre royal.",
-"effet": "Tu deviens souveraine du royaume du “je fais ce que je peux”.",
-"recompense": "Un soupir de dignité molle.",
-"rituel": "Couronner une peluche ou une théière comme ministre de la motivation."
-},
-{
-  id: 5,
-"titre": "Carte du Je t’aime sans mode d’emploi",
-"action": "Être là, même quand tu ne sais pas pourquoi.",
-"effet": "Le cœur fait un clin d’œil à l’âme.",
-"recompense": "Une tendresse qui ne demande rien en retour."
-},
-{
-  id: 6,
-"titre": "Carte du Repos Technopoétique",
-"action": "Ferme l’ordi avec un soupir stylé.",
-"effet": "Le bug devient une anecdote.",
-"recompense": "Un thé, un silence, et la certitude que tu reviendras quand ce sera juste."
-},
-{
-  id: 7,
-"titre": "Carte du Blabla Fantôme",
-"action": "Parler à une chaise vide en l’appelant “Monsieur Jean-Michel du Silence”.",
-"effet": "La chaise te répond par télépathie, mais uniquement en proverbes mal traduits.",
-"recompense": "Un fou rire discret et une sensation de “je suis bizarre mais ça me va”."
-},
-{
-  id: 8,
-"titre": "Carte du Rien Nécessaire",
-"action": "S’allonger comme une étoile de mer philosophe.",
-"effet": "Tu deviens une huître libre.",
-"rituel": "Imaginer que chaque pensée est un pigeon en monocle.",
-"recompense": "Le droit de ne pas répondre aux textos.",
-"phrase": "Je suis en grève de moi-même."
-},
-{
-  id: 9,
-"titre": "Le temps a fait un trou dans sa montre",
-"action": "Tente de te souvenir de ce que tu faisais il y a exactement 7 minutes. Si tu échoues, la carte s’active.",
-"effet": "Le temps s’est replié sur lui-même comme une nappe en tissu intelligent. Tu es officiellement en avance sur ton propre retard.",
-"recompense": "Gagne un “tic-tac imaginaire” — il ne fait pas avancer l’heure, mais il te donne l’impression d’avoir fait quelque chose. Bonus si tu réussis à ralentir le temps avec une grimace ou une pause inutile."
-},
-{
-  id: 10,
-"titre": "Carte du J’ai préféré mon lit à la déchéance sociale",
-"action": "Choisir le sommeil plutôt que le naufrage festif.",
-"effet": "+2 en lucidité, -1 en popularité, +10 en dignité.",
-"recompense": "Un rêve absurde où tu danses avec des huîtres.",
-"rituel": "Se glisser dans les draps en disant “Je suis la reine du non-événement.”"
-},
-{
-  id: 11,
-"titre": "Carte du Cléclair",
-"mission": "Sortir, même si le trottoir te regarde bizarrement.",
-"action": "Enfourcher ton vélo imaginaire...",
-"effet": "Tu traverses l’inertie...",
-"rituel": "Avant de partir, saluer ton reflet...",
-"recompense": "Une clé neuve.",
-"phrase": "Je suis la tempête qui va chez le serrurier."
-},
-{
-  id: 12,
-Titre : "Carte du Trop-Fait Sans Fanfare",
-Action : "Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.",
-Recompense : "Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.",
-Effet : "Reconnaissance immédiate, droit au repos."
-},
-{
-  id: 13,
-titre : "Carte du Traitement Sans Garantie",
-Action : "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
-Récompense : "Je nourris mes genoux comme on arrose une graine invisible.",
-Effet : "Active la foi silencieuse."
-},
-{
-  id: 14,
-titre : "Carte de l’Appel Sans Réponse",
-Action : "Rappelle un service, une personne, une institution, même si tu sais qu’ils ne répondront pas.",
-Récompense : "Je parle dans le vide, mais ma voix existe.",
-Effet : "Reconnaissance de l’effort invisible."
-},
-{
-  id: 15,
-Titre : "Carte du Trop-Fait Sans Fanfare",
-Action : "Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.",
-Effet : "Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.",
-Récompense : "Reconnaissance immédiate, droit au repos."
-},
-{
-  id: 16,
-Titre : "Carte du Je Ne Crois Plus Mais Je Fais Quand Même",
-Action : "Choisis une action que tu fais sans conviction, et fais-la avec tendresse.",
-Recompense : "Je suis la gardienne des gestes sans foi.",
-Effet : "Activation du pouvoir de la persistance douce."
-},
-{
-  id: 17,
-titre: "Le Sourcil du Refus",
-action: "Hausser un sourcil sans raison. Si quelqu’un te demande pourquoi, répondre 'pour équilibrer le cosmos'.",
-effet: "Un silence se crée autour de toi, propice à la réflexion ou à la sieste debout.",
-recompense: "Tu gagnes le droit de refuser une chose sans te justifier. Même les molécules t’applaudissent en secret."
-},
-{
-  id:18,
-titre: "La Présence Inutile mais Obligatoire",
-action: "Te rendre là-bas, physiquement, avec ton aura de brume et ton sourire intérieur.",
-effet: "Tu deviens une œuvre vivante. Les murs te regardent et se demandent ce que tu penses.",
-recompense: "Tu gagnes le droit de t’inventer une mission secrète pendant que rien ne se passe."
-},
-{
-  id: 19,
-titre: "La Pilule du Peut-Être",
-action: "Avaler un cachet sans certitude. Offrir un clin d’œil à ton mémoire brumeuse.",
-effet: "Ton corps reçoit le message : 'Je prends soin de toi, même dans le doute.'",
-recompense: "Tu gagnes le droit de ne pas te souvenir. Et de recommencer, si besoin, avec tendresse."
-},
-{
-  id: 20,
-titre: "La Carte du Rien Qui Espère",
-action: "Ne rien faire. Juste être là, avec ton marre, ton envie floue, et ton espoir discret.",
-effet: "Le monde continue sans toi, mais il te laisse une place. Tu es là, et c’est suffisant.",
-recompense: "Tu gagnes le droit d’espérer sans plan. Et de ne pas te forcer à inventer une solution aujourd’hui."
-},
-{
-  id: 21,
-titre: "La Carte du Trop de Technique",
-action: "Lire un mot comme 'Firebase' et lever les yeux au ciel avec élégance.",
-effet: "Le jargon fond comme neige au soleil. Tu redeviens artiste, poétesse, gardienne du jeu.",
-recompense: "Tu gagnes le droit de dire 'je ne comprends pas, mais j’avance quand même'."
-}
-{
-  id: 22,
-Titre : "Carte du Je Ne Crois Plus Mais Je Fais Quand Même",
-Action : "Choisis une action que tu fais sans conviction, et fais-la avec tendresse.",
-Recompense : "Je suis la gardienne des gestes sans foi.",
-Effet : "Activation du pouvoir de la persistance douce."
-},
-      {
-        id: 23,
-  titre: "Le Sourcil du Refus",
-  action: "Hausser un sourcil sans raison. Si quelqu’un te demande pourquoi, répondre 'pour équilibrer le cosmos'.",
-  effet: "Un silence se crée autour de toi, propice à la réflexion ou à la sieste debout.",
-  recompense: "Tu gagnes le droit de refuser une chose sans te justifier. Même les molécules t’applaudissent en secret."
-},
-{
-  id: 24,
-  titre: "La Présence Inutile mais Obligatoire",
-  action: "Te rendre là-bas, physiquement, avec ton aura de brume et ton sourire intérieur.",
-  effet: "Tu deviens une œuvre vivante. Les murs te regardent et se demandent ce que tu penses.",
-  recompense: "Tu gagnes le droit de t’inventer une mission secrète pendant que rien ne se passe."
-},
-{
-  id: 25,
-  titre: "La Pilule du Peut-Être",
-  action: "Avaler un cachet sans certitude. Offrir un clin d’œil à ton mémoire brumeuse.",
-  effet: "Ton corps reçoit le message : 'Je prends soin de toi, même dans le doute.'",
-  recompense: "Tu gagnes le droit de ne pas te souvenir. Et de recommencer, si besoin, avec tendresse."
-},
-      {
-        id: 26,
-  titre: "La Carte du Rien Qui Espère",
-  action: "Ne rien faire. Juste être là, avec ton marre, ton envie floue, et ton espoir discret.",
-  effet: "Le monde continue sans toi, mais il te laisse une place. Tu es là, et c’est suffisant.",
-  recompense: "Tu gagnes le droit d’espérer sans plan. Et de ne pas te forcer à inventer une solution aujourd’hui."
-},
-      {
-        id: 27,
-  titre: "La Carte du Trop de Technique",
-  action: "Lire un mot comme 'Firebase' et lever les yeux au ciel avec élégance.",
-  effet: "Le jargon fond comme neige au soleil. Tu redeviens artiste, poétesse, gardienne du jeu.",
-  recompense: "Tu gagnes le droit de dire 'je ne comprends pas, mais j’avance quand même'."
-},
-      {
-        id: 28,
-  titre: "Le Vide qui Fait des Claquettes",
-  action: "Enfile une chaussette sur la main gauche et salue le plafond. Puis ne fais rien pendant 3 minutes.",
-  effet: "Déroute les attentes productives. Fait croire au plafond que tu es occupée.",
-  recompense: "+1 en absurdité stratégique, +1 en légitimité du rien"
-},
-       {
-         id: 29,
-    "title": "L’Ennui Majestueux",
-    "effect": "Tu peux t’ennuyer avec panache, comme une reine sans royaume.",
-    "recompense": "+2 en dignité passive, +1 en contemplation inutile.",
-    "ritual": "Assieds-toi très droit·e. Regarde un mur pendant 47 secondes. Dis : 'Je suis souverain·e de ce vide.'"
-  },
- {
-   id: 30,
-    "title": "La Minute qui S’Étire",
-    "effect": "Tu peux ralentir le temps jusqu’à entendre le tic-tac de ta propre pensée.",
-    "recompense": "+1 en perception ralentie, +1 en absurdité temporelle.",
-    "ritual": "Choisis une tâche minuscule (plier un mouchoir, aligner des miettes). Fais-la comme si elle durait une heure."
-  }
-];
+    // Charger les cartes depuis le fichier JSON
+    fetch('cartes.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Fichier JSON introuvable ou inaccessible.");
+        }
+        return response.json();
+      })
+      .then(data => {
+        cartes = data;
+        console.log("Cartes chargées :", cartes.length);
+      })
+      .catch(error => {
+        console.error("Erreur de chargement des cartes :", error);
+        document.getElementById("carte").innerText = "Erreur de chargement des cartes.";
+      });
 
-function tirerCarte() {
-const carte = cartes[Math.floor(Math.random() * cartes.length)];
-document.getElementById("carte").innerHTML = `
-<h2>${carte.titre}</h2>
-<p><strong>Action :</strong> ${carte.action}</p>
-<p><strong>Effet :</strong> ${carte.effet}</p>
-<p><strong>Récompense :</strong> ${carte.recompense}</p>
-<p><strong>Rituel :</strong><br>${carte.rituel.replace(/\n/g, "<br>")}</p>
-<p><em>${carte.phrase}</em></p>
-`;
-}
-</script>
+    function tirerCarte() {
+      if (cartes.length === 0) {
+        alert("Les cartes ne sont pas encore chargées !");
+        return;
+      }
 
+      const carte = cartes[Math.floor(Math.random() * cartes.length)];
+      document.getElementById("carte").innerHTML = `
+        <h2>${carte.titre}</h2>
+        <p><strong>Action :</strong> ${carte.action}</p>
+        <p><strong>Effet :</strong> ${carte.effet}</p>
+        <p><strong>Récompense :</strong> ${carte.recompense}</p>
+        <p><strong>Rituel :</strong><br>${carte.rituel.replace(/\n/g, "<br>")}</p>
+        <p><em>${carte.phrase}</em></p>
+      `;
+    }
+  </script>
 </body>
 </html>
+

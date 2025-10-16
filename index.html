@@ -1,284 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Tirage de carte absurde</title>
-<style>
-body {
-font-family: sans-serif;
-background-color: #fdf6e3;
-color: #333;
-padding: 2em;
-max-width: 800px;
-margin: auto;
-}
-button {
-padding: 0.6em 1.2em;
-font-size: 1.1em;
-background-color: #e0cfe3;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-margin-bottom: 1em;
-}
-#carte {
-padding: 1em;
-border: 2px dashed #ccc;
-background-color: #fff;
-border-radius: 10px;
-}
-h2 {
-color: #6a4c93;
-margin-top: 0;
-}
-p {
-margin: 0.5em 0;
-}
-strong {
-color: #444;
-}
-em {
-color: #6a4c93;
-font-style: italic;
-}
-  <head>
   <meta charset="UTF-8">
-  <title>Mon Jeu de Cartes Absurdes</title>
-
-  <!-- STYLE POUR LES CARTES -->
+  <title>Cartes Poétiques</title>
   <style>
-    <style>
-  .carte {
-    width: 300px;
-    background-color: #fdfaf6;
-    border: 1px solid #d8cfc4;
-    border-radius: 12px;
-    box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
-    margin: 30px auto;
-    padding: 20px;
-    font-family: 'Georgia', serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    body {
+      background-color: #fdfaf6;
+      font-family: 'Georgia', serif;
+      color: #333;
+      text-align: center;
+    }
 
-  .motcle {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #003366;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
+    h1 {
+      margin-top: 30px;
+      color: #003366;
+    }
 
-  .illustration {
-    font-size: 2.5em;
-    margin: 10px 0;
-  }
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 20px auto;
+    }
 
-  .titre {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #003366;
-    margin-bottom: 5px;
-    text-align: center;
-    text-transform: uppercase;
-  }
+    .carte {
+      width: 320px;
+      background-color: #fffdf6;
+      border: 1px solid #d8cfc4;
+      border-radius: 12px;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .texte {
-    font-size: 0.95em;
-    color: #333;
-    text-align: center;
-    margin-bottom: 15px;
-    line-height: 1.4em;
-  }
+    .motcle {
+      font-size: 1em;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
 
-  .phrase {
-    font-style: italic;
-    color: #003366;
-    font-size: 1em;
-    text-align: center;
-    margin-top: 10px;
-  }
-</style> 
-</style>
+    .illustration {
+      font-size: 2.5em;
+      margin: 10px 0;
+    }
+
+    .titre {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .texte {
+      font-size: 0.95em;
+      color: #333;
+      text-align: center;
+      margin-bottom: 15px;
+      line-height: 1.4em;
+    }
+
+    .phrase {
+      font-style: italic;
+      color: #003366;
+      font-size: 1em;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
+  <h1>🌸 Tirage des Cartes Poétiques</h1>
+  <button onclick="afficherToutesLesCartes()">Afficher les cartes</button>
+  <div id="zone-cartes"></div>
 
-<h1>Tire ta carte absurde</h1>
-<button onclick="tirerCarte()">🎴 Tirer une carte</button>
-<div id="carte">Aucune carte tirée pour l’instant.</div>
+  <script>
+    const cartes = [
+      {
+        titre: "La Chaussette qui Mérite une Médaille",
+        illustration: "🧦🥇",
+        motcle: "RECONNAISSANCE",
+        texte: "Elle a survécu à trois lavages sans partenaire. Elle continue à réchauffer malgré l’abandon.",
+        phrase: "Je suis la preuve que la solitude peut être utile."
+      },
+      {
+        titre: "Le Nuage qui S’excuse",
+        illustration: "☁️🙏",
+        motcle: "HUMILITÉ",
+        texte: "Il n’a pas voulu pleuvoir. Il voulait juste passer.",
+        phrase: "Je suis la pluie qui demande pardon."
+      },
+      {
+        titre: "Le Bouton qui Refuse de Fermer",
+        illustration: "🧥🚫",
+        motcle: "RÉSISTANCE",
+        texte: "Il a vu trop de vent. Il veut rester ouvert au monde.",
+        phrase: "Je suis l’ouverture têtue du quotidien."
+      }
+    ];
 
-<script>
-const cartes = [
-{
-titre: "Carte du J’en ai marre de cet informatique",
-action: "Soupirer devant l’écran comme si tu auditionnais pour un rôle dramatique.",
-effet: "Le bug devient un personnage secondaire dans ta tragédie intérieure.",
-recompense: "Une pause thé, un regard complice à ta plante verte, et le droit de ne rien corriger tout de suite.",
-rituel: `1. "Fermer un onglet avec lenteur et dignité.",
-2. Dire à voix basse : “Je suis une humaine, pas une machine.”,
-3. Offrir un câlin mental à ton clavier.`,
-phrase: "Je suis la souveraine du ras-le-bol numérique."
-},
-{
-"titre": "Carte du Double Coup Domestique",
-"action": "Brosser les dents avec panache, tout en lançant un regard accusateur à l’évier.",
-"effet": "L’évier se nettoie par osmose morale, impressionné par ta détermination bucco-dentaire.",
-"rituel": "1. Cracher avec élégance.\n2. Essuyer l’évier comme si tu bénissais un autel.\n3. Dire à voix basse : \"Deux mouches d’un seul claquement de brosse.\""
-},
-{
-"titre": "Carte du Flou Sacré",
-"action": "Fixer un mur, une plante, ou ton propre pied en te demandant : \"Est-ce que c’est ça, le sens de la vie ?\"",
-"effet": "Le flou devient une brume créative où les envies se déguisent en pigeons philosophes.",
-"recompense": "1. Soupirer comme une diva en fin de spectacle.\n2. Imaginer que ta culpabilité est un lama qui fait du moonwalk.\n3. Lui offrir un banc mental avec coussins moelleux et une pancarte : \"Réservé aux pensées floues.\""
-},
-{
-"titre": "La patate cosmique en robe de chambre",
-"action": "Se lever en traînant une chaussette comme sceptre royal.",
-"effet": "Tu deviens souveraine du royaume du “je fais ce que je peux”.",
-"recompense": "Un soupir de dignité molle.",
-"rituel": "Couronner une peluche ou une théière comme ministre de la motivation."
-},
-{
-"titre": "Carte du Je t’aime sans mode d’emploi",
-"action": "Être là, même quand tu ne sais pas pourquoi.",
-"effet": "Le cœur fait un clin d’œil à l’âme.",
-"recompense": "Une tendresse qui ne demande rien en retour."
-},
-{
-"titre": "Carte du Repos Technopoétique",
-"action": "Ferme l’ordi avec un soupir stylé.",
-"effet": "Le bug devient une anecdote.",
-"recompense": "Un thé, un silence, et la certitude que tu reviendras quand ce sera juste."
-},
-{
-"titre": "Carte du Blabla Fantôme",
-"action": "Parler à une chaise vide en l’appelant “Monsieur Jean-Michel du Silence”.",
-"effet": "La chaise te répond par télépathie, mais uniquement en proverbes mal traduits.",
-"recompense": "Un fou rire discret et une sensation de “je suis bizarre mais ça me va”."
-},
-{
-"titre": "Carte du Rien Nécessaire",
-"action": "S’allonger comme une étoile de mer philosophe.",
-"effet": "Tu deviens une huître libre.",
-"rituel": "Imaginer que chaque pensée est un pigeon en monocle.",
-"recompense": "Le droit de ne pas répondre aux textos.",
-"phrase": "Je suis en grève de moi-même."
-},
-{
-"titre": "Le temps a fait un trou dans sa montre",
-"action": "Tente de te souvenir de ce que tu faisais il y a exactement 7 minutes. Si tu échoues, la carte s’active.",
-"effet": "Le temps s’est replié sur lui-même comme une nappe en tissu intelligent. Tu es officiellement en avance sur ton propre retard.",
-"recompense": "Gagne un “tic-tac imaginaire” — il ne fait pas avancer l’heure, mais il te donne l’impression d’avoir fait quelque chose. Bonus si tu réussis à ralentir le temps avec une grimace ou une pause inutile."
-},
-{
-"titre": "Carte du J’ai préféré mon lit à la déchéance sociale",
-"action": "Choisir le sommeil plutôt que le naufrage festif.",
-"effet": "+2 en lucidité, -1 en popularité, +10 en dignité.",
-"recompense": "Un rêve absurde où tu danses avec des huîtres.",
-"rituel": "Se glisser dans les draps en disant “Je suis la reine du non-événement.”"
-},
-{
-"titre": "Carte du Cléclair",
-"mission": "Sortir, même si le trottoir te regarde bizarrement.",
-"action": "Enfourcher ton vélo imaginaire...",
-"effet": "Tu traverses l’inertie...",
-"rituel": "Avant de partir, saluer ton reflet...",
-"recompense": "Une clé neuve.",
-"phrase": "Je suis la tempête qui va chez le serrurier."
-},
-{
-Titre : "Carte du Trop-Fait Sans Fanfare",
-Action : "Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.",
-Recompense : "Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.",
-Effet : "Reconnaissance immédiate, droit au repos."
-},
-{
-titre : "Carte du Traitement Sans Garantie",
-Action : "Prends ton complément alimentaire comme un élixir magique, même si tu doutes.",
-Récompense : "Je nourris mes genoux comme on arrose une graine invisible.",
-Effet : "Active la foi silencieuse."
-},
-{
-titre : "Carte de l’Appel Sans Réponse",
-Action : "Rappelle un service, une personne, une institution, même si tu sais qu’ils ne répondront pas.",
-Récompense : "Je parle dans le vide, mais ma voix existe.",
-Effet : "Reconnaissance de l’effort invisible."
-},
-{
-Titre : "Carte du Trop-Fait Sans Fanfare",
-Action : "Énumère tout ce que tu as fait aujourd’hui, même les plus petits gestes.",
-Effet : "Je suis une fourmi poétique, et j’ai déplacé des montagnes sans bruit.",
-Récompense : "Reconnaissance immédiate, droit au repos."
-},
-{
-Titre : "Carte du Je Ne Crois Plus Mais Je Fais Quand Même",
-Action : "Choisis une action que tu fais sans conviction, et fais-la avec tendresse.",
-Recompense : "Je suis la gardienne des gestes sans foi.",
-Effet : "Activation du pouvoir de la persistance douce."
-},
-{
-titre: "Le Sourcil du Refus",
-action: "Hausser un sourcil sans raison. Si quelqu’un te demande pourquoi, répondre 'pour équilibrer le cosmos'.",
-effet: "Un silence se crée autour de toi, propice à la réflexion ou à la sieste debout.",
-recompense: "Tu gagnes le droit de refuser une chose sans te justifier. Même les molécules t’applaudissent en secret."
-},
-{
-titre: "La Présence Inutile mais Obligatoire",
-action: "Te rendre là-bas, physiquement, avec ton aura de brume et ton sourire intérieur.",
-effet: "Tu deviens une œuvre vivante. Les murs te regardent et se demandent ce que tu penses.",
-recompense: "Tu gagnes le droit de t’inventer une mission secrète pendant que rien ne se passe."
-},
-{
-titre: "La Pilule du Peut-Être",
-action: "Avaler un cachet sans certitude. Offrir un clin d’œil à ton mémoire brumeuse.",
-effet: "Ton corps reçoit le message : 'Je prends soin de toi, même dans le doute.'",
-recompense: "Tu gagnes le droit de ne pas te souvenir. Et de recommencer, si besoin, avec tendresse."
-},
-{
-titre: "La Carte du Rien Qui Espère",
-action: "Ne rien faire. Juste être là, avec ton marre, ton envie floue, et ton espoir discret.",
-effet: "Le monde continue sans toi, mais il te laisse une place. Tu es là, et c’est suffisant.",
-recompense: "Tu gagnes le droit d’espérer sans plan. Et de ne pas te forcer à inventer une solution aujourd’hui."
-},
-{
-titre: "La Carte du Trop de Technique",
-action: "Lire un mot comme 'Firebase' et lever les yeux au ciel avec élégance.",
-effet: "Le jargon fond comme neige au soleil. Tu redeviens artiste, poétesse, gardienne du jeu.",
-recompense: "Tu gagnes le droit de dire 'je ne comprends pas, mais j’avance quand même'."
-}
-
-]
-function afficherToutesLesCartes() {
-  const zone = document.getElementById("zone-cartes");
-  zone.innerHTML = ""; // vide la zone avant d’ajouter
-  cartes.forEach(carte => {
-    const bloc = document.createElement("div");
-    bloc.className = "carte";
-    bloc.innerHTML = `
-      <div class="titre">${carte.titre}</div>
-      <div class="illustration">${carte.illustration}</div>
-      <div class="motcle">${carte.motcle}</div>
-      <div class="texte">${carte.texte}</div>
-      <div class="phrase">"${carte.phrase}"</div>
-    `;
-    zone.appendChild(bloc);
-  });
-}
-
-
-function tirerCarte() {
-const carte = cartes[Math.floor(Math.random() * cartes.length)];
-document.getElementById("carte").innerHTML = `
-<h2>${carte.titre}</h2>
-<p><strong>Action :</strong> ${carte.action}</p>
-<p><strong>Effet :</strong> ${carte.effet}</p>
-<p><strong>Récompense :</strong> ${carte.recompense}</p>
-<p><strong>Rituel :</strong><br>${carte.rituel.replace(/\n/g, "<br>")}</p>
-<p><em>${carte.phrase}</em></p>
-`;
-}
-</script>
-
+    function afficherToutesLesCartes() {
+      const zone = document.getElementById("zone-cartes");
+      zone.innerHTML = "";
+      cartes.forEach(carte => {
+        const bloc = document.createElement("div");
+        bloc.className = "carte";
+        bloc.innerHTML = `
+          <div class="motcle">${carte.motcle}</div>
+          <div class="illustration">${carte.illustration}</div>
+          <div class="titre">${carte.titre}</div>
+          <div class="texte">${carte.texte}</div>
+          <div class="phrase">${carte.phrase}</div>
+        `;
+        zone.appendChild(bloc);
+      });
+    }
+  </script>
 </body>
 </html>

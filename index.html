@@ -47,48 +47,65 @@ font-style: italic;
 
   <!-- STYLE POUR LES CARTES -->
   <style>
-    .carte {
-      width: 350px;
-      border: 2px solid #333;
-      border-radius: 12px;
-      padding: 20px;
-      background-color: #fffdf6;
-      box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
-      font-family: 'Georgia', serif;
-      margin: 20px auto;
-    }
-    .titre {
-      text-align: center;
-      font-size: 1.4em;
-      font-weight: bold;
-      color: #003366;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-    .illustration {
-      text-align: center;
-      font-size: 2em;
-      margin: 15px 0;
-    }
-    .motcle {
-      text-align: center;
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #003366;
-      margin-bottom: 10px;
-    }
-    .texte {
-      font-size: 0.95em;
-      line-height: 1.5em;
-      color: #333;
-      margin-bottom: 15px;
-    }
-    .phrase {
-      font-style: italic;
-      text-align: center;
-      color: #003366;
-      font-size: 1em;
-    }
+     .carte {
+    width: 350px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fffdf6;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Georgia', serif;
+    margin: 20px auto;
+  }
+  .titre {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .illustration {
+    text-align: center;
+    font-size: 2em;
+    margin: 15px 0;
+  }
+  .motcle {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+  }
+  .texte {
+    font-size: 0.95em;
+    line-height: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .phrase {
+    font-style: italic;
+    text-align: center;
+    color: #003366;
+    font-size: 1em;
+  }
+  button {
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 20px;
+  }
+  button:hover {
+    background-color: #005599;
+  }
+
+<button onclick="afficherToutesLesCartes()">Afficher toutes les cartes</button>
+<div id="zone-cartes"></div>
+
 
 </style>
 </head>
@@ -239,6 +256,23 @@ recompense: "Tu gagnes le droit de dire 'je ne comprends pas, mais j’avance qu
 }
 
 ]
+function afficherToutesLesCartes() {
+  const zone = document.getElementById("zone-cartes");
+  zone.innerHTML = ""; // vide la zone avant d’ajouter
+  cartes.forEach(carte => {
+    const bloc = document.createElement("div");
+    bloc.className = "carte";
+    bloc.innerHTML = `
+      <div class="titre">${carte.titre}</div>
+      <div class="illustration">${carte.illustration}</div>
+      <div class="motcle">${carte.motcle}</div>
+      <div class="texte">${carte.texte}</div>
+      <div class="phrase">"${carte.phrase}"</div>
+    `;
+    zone.appendChild(bloc);
+  });
+}
+
 
 function tirerCarte() {
 const carte = cartes[Math.floor(Math.random() * cartes.length)];

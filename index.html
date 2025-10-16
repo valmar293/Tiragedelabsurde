@@ -144,8 +144,7 @@
 
 
     ];
-
-   function afficherUneCarteAleatoire() {
+function afficherUneCarteAleatoire() {
   const zone = document.getElementById("zone-cartes");
   zone.innerHTML = "";
 
@@ -168,9 +167,10 @@
     <div class="phrase">${carte.rituel || carte.phrase || ""}</div>
   `;
   zone.appendChild(bloc);
+}
 
-      });
-    }
+
+  
   </script>
 </body>
 </html>

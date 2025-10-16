@@ -150,11 +150,15 @@ phrase: "Je suis la souveraine du ras-le-bol numérique."
         const bloc = document.createElement("div");
         bloc.className = "carte";
         bloc.innerHTML = `
-          <div class="motcle">${carte.motcle}</div>
-          <div class="illustration">${carte.illustration}</div>
-          <div class="titre">${carte.titre}</div>
-          <div class="texte">${carte.texte}</div>
-          <div class="phrase">${carte.phrase}</div>
+          <div class="motcle">RITUEL</div>
+    <div class="illustration">✨🃏</div>
+    <div class="titre">${carte.titre}</div>
+    <div class="texte"><strong>Action :</strong> ${carte.action}</div>
+    <div class="texte"><strong>Effet :</strong> ${carte.effet}</div>
+    <div class="texte"><strong>Récompense :</strong> ${carte.recompense}</div>
+    <div class="phrase">${carte.rituel}</div>
+
+
         `;
         zone.appendChild(bloc);
       });

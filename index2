@@ -1,1 +1,129 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Essai – Cartes Absurdes</title>
+  <style>
+    body {
+      background-color: #fdfaf6;
+      font-family: 'Georgia', serif;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #003366;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 20px auto;
+      display: block;
+    }
+    button:hover {
+      background-color: #005599;
+    }
+    .carte {
+      width: 350px;
+      border: 2px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: #fffdf6;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+      margin: 20px auto;
+    }
+    .titre {
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .illustration {
+      text-align: center;
+      font-size: 2em;
+      margin: 15px 0;
+    }
+    .motcle {
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+    .texte {
+      font-size: 0.95em;
+      line-height: 1.5em;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .phrase {
+      font-style: italic;
+      text-align: center;
+      color: #003366;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Carnet des Cartes Invisibles – Essai</h1>
+  <button onclick="afficherToutesLesCartes()">Afficher toutes les cartes</button>
+  <div id="zone-cartes"></div>
+
+  <script>
+    const cartes = [
+      {
+        titre: "La Chaise qui Refuse de Servir",
+        illustration: "🪑🚫",
+        motcle: "DÉSOBÉISSANCE",
+        texte: `Elle ne veut plus qu’on s’assoie sur elle.<br>
+                Elle réclame du repos, elle aussi.<br>
+                Honore son refus comme un acte de dignité.`,
+        phrase: `"Je suis un meuble en grève, et c’est légitime."`
+      },
+      {
+        titre: "Le Pigeon qui Ignore les Règles",
+        illustration: "🕊️📜",
+        motcle: "LIBERTÉ",
+        texte: `Il vole là où c’est interdit.<br>
+                Il ne lit pas les panneaux.<br>
+                Il suit le vent, pas les lois.`,
+        phrase: `"Je suis le souffle qui traverse les barrières."`
+      },
+      {
+        titre: "La Chaussette qui Mérite une Médaille",
+        illustration: "🧦🥇",
+        motcle: "RECONNAISSANCE",
+        texte: `Elle a survécu à trois lavages sans partenaire.<br>
+                Elle continue à réchauffer malgré l’abandon.<br>
+                Elle mérite qu’on l’applaudisse.`,
+        phrase: `"Je suis la preuve que la solitude peut être utile."`
+      }
+    ];
+
+    function afficherToutesLesCartes() {
+      const zone = document.getElementById("zone-cartes");
+      zone.innerHTML = "";
+      cartes.forEach(carte => {
+        const bloc = document.createElement("div");
+        bloc.className = "carte";
+        bloc.innerHTML = `
+          <div class="titre">${carte.titre}</div>
+          <div class="illustration">${carte.illustration}</div>
+          <div class="motcle">${carte.motcle}</div>
+          <div class="texte">${carte.texte}</div>
+          <div class="phrase">${carte.phrase}</div>
+        `;
+        zone.appendChild(bloc);
+      });
+    }
+  </script>
+</body>
+</html>

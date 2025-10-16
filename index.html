@@ -145,24 +145,30 @@
 
     ];
 
-    function afficherToutesLesCartes() {
-      const zone = document.getElementById("zone-cartes");
-      zone.innerHTML = "";
-      cartes.forEach(carte => {
-        const bloc = document.createElement("div");
-        bloc.className = "carte";
-        bloc.innerHTML = `
-          <div class="motcle">RITUEL</div>
-    <div class="illustration">✨🃏</div>
+   function afficherUneCarteAleatoire() {
+  const zone = document.getElementById("zone-cartes");
+  zone.innerHTML = "";
+
+  const carte = cartes[Math.floor(Math.random() * cartes.length)];
+
+  const bloc = document.createElement("div");
+  bloc.className = "carte";
+
+  const texte = `
+    ${carte.action ? `<div class="texte"><strong>Action :</strong> ${carte.action}</div>` : ""}
+    ${carte.effet ? `<div class="texte"><strong>Effet :</strong> ${carte.effet}</div>` : ""}
+    ${carte.recompense ? `<div class="texte"><strong>Récompense :</strong> ${carte.recompense}</div>` : ""}
+  `;
+
+  bloc.innerHTML = `
+    <div class="motcle">${carte.motcle || "RITUEL"}</div>
+    <div class="illustration">${carte.illustration || "✨🃏"}</div>
     <div class="titre">${carte.titre}</div>
-    <div class="texte"><strong>Action :</strong> ${carte.action}</div>
-    <div class="texte"><strong>Effet :</strong> ${carte.effet}</div>
-    <div class="texte"><strong>Récompense :</strong> ${carte.recompense}</div>
-    <div class="phrase">${carte.rituel}</div>
+    ${texte}
+    <div class="phrase">${carte.rituel || carte.phrase || ""}</div>
+  `;
+  zone.appendChild(bloc);
 
-
-        `;
-        zone.appendChild(bloc);
       });
     }
   </script>

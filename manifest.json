@@ -13,3 +13,16 @@
     }
   ]
 }
+"icons": [
+  {
+    "src": "assets/danseuse.png",  // ← ici tu colles le chemin vers ton icône
+    "sizes": "512x512",
+    "type": "image/png"
+  },
+  {
+    "src": "assets/danseuse.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }
+]
+

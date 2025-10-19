@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+	“Correction du fichier robots.txt pour l’indexation”

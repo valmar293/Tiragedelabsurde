@@ -1,23 +1,24 @@
 {
   "name": "Tirage de l'absurde",
   "short_name": "AbsurdCards",
-  "start_url": "index.html",
+  "start_url": "/Tiragedelabsurde/",
+  "scope": "/Tiragedelabsurde/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#222222",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "/Tiragedelabsurde/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "assets/danseuse.png",
+      "src": "/Tiragedelabsurde/assets/danseuse.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "assets/danseuse.png",
+      "src": "/Tiragedelabsurde/assets/danseuse.png",
       "sizes": "192x192",
       "type": "image/png"
     }

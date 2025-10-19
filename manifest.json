@@ -8,11 +8,6 @@
   "theme_color": "#222222",
   "icons": [
     {
-      "src": "/Tiragedelabsurde/icon.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
       "src": "/Tiragedelabsurde/assets/danseuse.png",
       "sizes": "512x512",
       "type": "image/png"

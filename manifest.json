@@ -1,7 +1,7 @@
 {
   "name": "Tirage de l'absurde",
   "short_name": "AbsurdCards",
-  "start_url": "/Tiragedelabsurde/",
+  "start_url": "/Tiragedelabsurde/index.html",
   "scope": "/Tiragedelabsurde/",
   "display": "standalone",
   "background_color": "#ffffff",

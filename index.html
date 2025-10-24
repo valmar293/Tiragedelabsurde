@@ -92,23 +92,22 @@
   <button onclick="afficherUneCarteAleatoire()">tirer une carte</button>
   <div id="zone-cartes"></div>
    
-<!-- Présences réelles -->
+<!-- Compteur avec count.cab -->
 <div id="compteur" style="margin-top: 30px; text-align: center; font-family: monospace; font-size: 16px; color: #333;">
   🌌 Présences ayant traversé le vestibule : <span id="visites">...</span>
 </div>
 
 <script>
-  fetch('https://api.countapi.xyz/hit/valmar293.github.io/Tiragedelabsurde')
+  fetch('https://count.cab/hit/valmar293.github.io/Tiragedelabsurde')
     .then(response => response.json())
     .then(data => {
-      document.getElementById("visites").textContent = data.value;
+      document.getElementById("visites").textContent = data.count;
     })
     .catch(error => {
       document.getElementById("visites").textContent = "Erreur de présence";
       console.error("Erreur compteur :", error);
     });
 </script>
-
 
 
 <!-- Espace de commentaires -->

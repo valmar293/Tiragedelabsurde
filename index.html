@@ -98,6 +98,7 @@
 </div>
 
 <!-- Script du compteur -->
+   
 <script>
   window.addEventListener("load", function() {
     const visites = Math.floor(Math.random() * (999 - 42 + 1)) + 42;
@@ -108,6 +109,14 @@
   });
 </script>
 
+
+<!-- Espace de commentaires -->
+<div id="commentaires" style="margin-top: 40px; text-align: center;">
+  <h3 style="font-family: serif;">💬 Laisser une trace dans le vestibule</h3>
+  <textarea id="champ-commentaire" rows="4" cols="40" placeholder="Écris ton murmure ici..." style="font-family: monospace; padding: 10px;"></textarea><br><br>
+  <button onclick="afficherCommentaire()" style="padding: 6px 12px; font-family: monospace;">Envoyer</button>
+  <div id="affichage-commentaire" style="margin-top: 20px; font-style: italic;"></div>
+</div>
 
 
 

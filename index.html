@@ -102,14 +102,11 @@
     .then(response => response.json())
     .then(data => {
       document.getElementById("visites").textContent = data.value;
+    })
+    .catch(error => {
+      document.getElementById("visites").textContent = "Erreur de présence";
+      console.error("Erreur compteur :", error);
     });
-</script>
-
-
-   
-<script>
-  const visites = Math.floor(Math.random() * (999 - 42 + 1)) + 42;
-  document.getElementById("visites").textContent = visites;
 </script>
 
 

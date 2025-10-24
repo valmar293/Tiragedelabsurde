@@ -94,20 +94,23 @@
    
 <!-- Présences invisibles -->
 <div id="compteur" style="margin-top: 20px; text-align: center; font-family: monospace; font-size: 16px; color: #333;">
-  🌌 Présences ayant traversé le vestibule : <span id="visites">...</span>
+  🌌 Présences ayant traversé le vestibule : <span id="visites">en attente...</span>
 </div>
 
 <!-- Script du compteur -->
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  window.addEventListener("load", function() {
     const visites = Math.floor(Math.random() * (999 - 42 + 1)) + 42;
-    document.getElementById("visites").textContent = visites;
+    const cible = document.getElementById("visites");
+    if (cible) {
+      cible.textContent = visites;
+    }
   });
 </script>
 
 
 
-<!-- Script du compteur symbolique -->
+
 <script>
   const visites = Math.floor(Math.random() * (999 - 42 + 1)) + 42;
   document.getElementById("visites").textContent = visites;

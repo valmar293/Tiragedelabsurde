@@ -93,7 +93,7 @@
   <div id="zone-cartes"></div>
    
 <!-- Présences réelles -->
-<div id="compteur" style="margin-top: 20px; text-align: center; font-family: monospace; font-size: 16px; color: #333;">
+<div id="compteur" style="margin-top: 30px; text-align: center; font-family: monospace; font-size: 16px; color: #333;">
   🌌 Présences ayant traversé le vestibule : <span id="visites">...</span>
 </div>
 
@@ -109,13 +109,29 @@
     });
 </script>
 
-<!-- Espace de commentaires GitHub -->
-<script src="https://utteranc.es/client.js"
-        repo="valeriepoetique/tirage-de-labsurde"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
+<!-- Espace de commentaires -->
+<div id="commentaires" style="margin-top: 40px; text-align: center;">
+  <h3 style="font-family: serif;">💬 Laisser une trace dans le vestibule</h3>
+  <textarea id="champ-commentaire" rows="4" cols="40" placeholder="Écris ton murmure ici..." style="font-family: monospace; padding: 10px;"></textarea><br><br>
+  <button onclick="ajouterCommentaire()" style="padding: 6px 12px; font-family: monospace;">Envoyer</button>
+
+  <div id="liste-commentaires" style="margin-top: 30px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; font-family: monospace;"></div>
+</div>
+
+<script>
+  function ajouterCommentaire() {
+    const champ = document.getElementById("champ-commentaire");
+    const texte = champ.value.trim();
+    const liste = document.getElementById("liste-commentaires");
+
+    if (texte !== "") {
+      const bloc = document.createElement("div");
+      bloc.style.marginBottom = "20px";
+      bloc.innerHTML = "🌱 <em>" + texte + "</em>";
+      liste.prepend(bloc); // ajoute en haut de la liste
+      champ.value = "";
+    }
+  }
 </script>
    
 

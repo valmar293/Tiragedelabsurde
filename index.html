@@ -92,34 +92,21 @@
   <button onclick="afficherUneCarteAleatoire()">tirer une carte</button>
   <div id="zone-cartes"></div>
    
-<!-- Présences invisibles -->
+<!-- Présences réelles -->
 <div id="compteur" style="margin-top: 20px; text-align: center; font-family: monospace; font-size: 16px; color: #333;">
-  🌌 Présences ayant traversé le vestibule : <span id="visites">en attente...</span>
+  🌌 Présences ayant traversé le vestibule : <span id="visites">...</span>
 </div>
 
-<!-- Script du compteur -->
-   
 <script>
-  window.addEventListener("load", function() {
-    const visites = Math.floor(Math.random() * (999 - 42 + 1)) + 42;
-    const cible = document.getElementById("visites");
-    if (cible) {
-      cible.textContent = visites;
-    }
-  });
+  fetch('https://api.countapi.xyz/hit/tirage-absurde/visites')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("visites").textContent = data.value;
+    });
 </script>
 
 
-<!-- Espace de commentaires -->
-<div id="commentaires" style="margin-top: 40px; text-align: center;">
-  <h3 style="font-family: serif;">💬 Laisser une trace dans le vestibule</h3>
-  <textarea id="champ-commentaire" rows="4" cols="40" placeholder="Écris ton murmure ici..." style="font-family: monospace; padding: 10px;"></textarea><br><br>
-  <button onclick="afficherCommentaire()" style="padding: 6px 12px; font-family: monospace;">Envoyer</button>
-  <div id="affichage-commentaire" style="margin-top: 20px; font-style: italic;"></div>
-</div>
-
-
-
+   
 <script>
   const visites = Math.floor(Math.random() * (999 - 42 + 1)) + 42;
   document.getElementById("visites").textContent = visites;

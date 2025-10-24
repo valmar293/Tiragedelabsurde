@@ -92,22 +92,25 @@
   <button onclick="afficherUneCarteAleatoire()">tirer une carte</button>
   <div id="zone-cartes"></div>
    
-<!-- Présences réelles -->
+<!-- Présences locales -->
 <div id="compteur" style="margin-top: 30px; text-align: center; font-family: monospace; font-size: 16px; color: #333;">
-  🌌 Présences ayant traversé le vestibule : <span id="visites">...</span>
+  🌌 Présences enregistrées sur ce navigateur : <span id="visites">...</span>
 </div>
 
 <script>
-  fetch('https://count.cab/hit/valmar293.github.io/Tiragedelabsurde')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("visites").textContent = data.count;
-    })
-    .catch(error => {
-      document.getElementById("visites").textContent = "Erreur de présence";
-      console.error("Erreur compteur :", error);
-    });
+  let visites = localStorage.getItem("compteur-visites");
+
+  if (!visites) {
+    visites = 1;
+  } else {
+    visites = parseInt(visites) + 1;
+  }
+
+  localStorage.setItem("compteur-visites", visites);
+  document.getElementById("visites").textContent = visites;
 </script>
+
+
 
 
 <!-- Espace de commentaires -->
